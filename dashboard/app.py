@@ -26,8 +26,22 @@ FIG = os.path.join(OUT, "figures")
 
 
 # ─── Veri yükleme (önbellek) ─────────────────────────────────────────────────
+def data_version():
+    """Create a cache-busting version from output/data file modification times."""
+    tracked_files = [
+        os.path.join(OUT, "monte_carlo_team_probabilities.csv"),
+        os.path.join(OUT, "most_likely_tournament_matches.csv"),
+        os.path.join(OUT, "most_likely_group_standings.csv"),
+        os.path.join(OUT, "most_likely_match_score_distributions.csv"),
+        os.path.join(OUT, "team_power_rankings.csv"),
+        os.path.join(OUT, "monte_carlo_final_pair_probabilities.csv"),
+        os.path.join(DATA, "team_features_2026_enriched.csv"),
+    ]
+    return "|".join(str(os.path.getmtime(path)) for path in tracked_files if os.path.exists(path))
+
+
 @st.cache_data
-def load_data():
+def load_data(_version):
     mc = pd.read_csv(os.path.join(OUT, "monte_carlo_team_probabilities.csv"))
     matches = pd.read_csv(os.path.join(OUT, "most_likely_tournament_matches.csv"))
     groups = pd.read_csv(os.path.join(OUT, "most_likely_group_standings.csv"))
@@ -40,7 +54,7 @@ def load_data():
     return mc, matches, groups, scores, power, finals, features, bracket
 
 
-mc, matches, groups, scores, power, finals, features, bracket = load_data()
+mc, matches, groups, scores, power, finals, features, bracket = load_data(data_version())
 
 # ─── Aşama çevirisi ──────────────────────────────────────────────────────────
 STAGE_TR = {
