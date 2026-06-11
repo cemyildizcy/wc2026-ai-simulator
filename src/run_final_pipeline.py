@@ -1,10 +1,11 @@
 """Run final modeling pipeline for WC 2026 AI Simulator.
 
 Steps:
-1. Rebuild EA FC 25 team features.
-2. Run calibrated Monte Carlo tournament simulator.
-3. Generate deterministic most-likely path.
-4. Generate scoreline distributions.
+1. Fetch and merge current World Football Elo ratings.
+2. Rebuild EA FC 25 team features.
+3. Run calibrated Monte Carlo tournament simulator.
+4. Generate deterministic most-likely path.
+5. Generate scoreline distributions.
 """
 
 import subprocess
@@ -13,6 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = [
+    "update_elo_ratings.py",
     "add_eafc25_features.py",
     "simulate_tournament.py",
     "generate_most_likely_path.py",

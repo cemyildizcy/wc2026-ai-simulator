@@ -10,7 +10,7 @@ Generated EA FC 25 team-strength features from `male_players.csv`.
 ## Output
 - Processed EA FC features: `C:\Users\cemyi\Desktop\wc2026-ai-simulator\data\processed\eafc25_team_features.csv`
 - Enriched final dataset: `C:\Users\cemyi\Desktop\wc2026-ai-simulator\data\final\team_features_2026_enriched.csv`
-- Shape: 48 rows × 55 columns
+- Shape: 48 rows × 70 columns
 
 ## Nation Mapping Used
 - Bosnia-Herzegovina → Bosnia and Herzegovina

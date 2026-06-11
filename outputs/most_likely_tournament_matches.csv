@@ -1,105 +1,105 @@
 match_number,stage,home,away,home_goals,away_goals,winner,decided_by,home_xg,away_xg
-1,Group Stage,Mexico,South Korea,2,1,Mexico,most_likely_score_prob=0.086,1.4601351219079066,1.379757422930807
-2,Group Stage,Mexico,South Africa,1,0,Mexico,most_likely_score_prob=0.100,1.9541560792235446,1.021196719769436
-3,Group Stage,Mexico,Czechia,1,0,Mexico,most_likely_score_prob=0.089,1.4591385990034644,1.3329555645000464
-4,Group Stage,South Korea,South Africa,1,0,South Korea,most_likely_score_prob=0.110,1.8028134065076638,0.9969910288491143
-5,Group Stage,South Korea,Czechia,1,0,South Korea,most_likely_score_prob=0.095,1.3461333289618647,1.3013601727599553
-6,Group Stage,South Africa,Czechia,0,1,Czechia,most_likely_score_prob=0.113,0.9963105956612094,1.7416613399007495
-7,Group Stage,Canada,Switzerland,0,1,Switzerland,most_likely_score_prob=0.098,1.254892289819696,1.4233916982292047
-8,Group Stage,Canada,Qatar,1,0,Canada,most_likely_score_prob=0.112,1.7101577858503143,1.0197891021700976
-9,Group Stage,Canada,Bosnia-Herzegovina,1,0,Canada,most_likely_score_prob=0.097,1.5560911617480677,1.219034770655674
-10,Group Stage,Switzerland,Qatar,1,0,Switzerland,most_likely_score_prob=0.126,1.7117160748808211,0.8998869137435271
-11,Group Stage,Switzerland,Bosnia-Herzegovina,1,0,Switzerland,most_likely_score_prob=0.112,1.55750906587825,1.0757061780489663
-12,Group Stage,Qatar,Bosnia-Herzegovina,0,1,Bosnia-Herzegovina,most_likely_score_prob=0.111,1.1158775015266413,1.4659642987702504
-13,Group Stage,Brazil,Morocco,1,0,Brazil,most_likely_score_prob=0.112,1.6096722967864094,1.058225542872146
-14,Group Stage,Brazil,Scotland,1,0,Brazil,most_likely_score_prob=0.118,1.7868644429824978,0.9314176126957656
-15,Group Stage,Brazil,Haiti,2,0,Brazil,most_likely_score_prob=0.131,2.3912050652410937,0.6928577220036145
-16,Group Stage,Morocco,Scotland,1,0,Morocco,most_likely_score_prob=0.105,1.469572401733696,1.1652069226946504
-17,Group Stage,Morocco,Haiti,1,0,Morocco,most_likely_score_prob=0.116,1.966600759539851,0.8667676057622047
-18,Group Stage,Scotland,Haiti,1,0,Scotland,most_likely_score_prob=0.117,1.73094157187396,0.9621810713631658
-19,Group Stage,United States,Paraguay,1,0,United States,most_likely_score_prob=0.104,1.531901789764458,1.1547651033426394
-20,Group Stage,United States,Australia,1,0,United States,most_likely_score_prob=0.110,1.5610612366969558,1.0941257716248063
-21,Group Stage,United States,Turkey,1,0,United States,most_likely_score_prob=0.093,1.3773841915844736,1.314031070463023
-22,Group Stage,Paraguay,Australia,1,0,Paraguay,most_likely_score_prob=0.105,1.3081462412489857,1.2163004799371981
-23,Group Stage,Paraguay,Turkey,0,1,Turkey,most_likely_score_prob=0.107,1.1542275924994887,1.4607613339398
-24,Group Stage,Australia,Turkey,0,1,Turkey,most_likely_score_prob=0.113,1.09361648669377,1.488566636396305
-25,Group Stage,Germany,Curaçao,2,0,Germany,most_likely_score_prob=0.133,2.4950035706419653,0.659315719389277
-26,Group Stage,Germany,Ivory Coast,1,0,Germany,most_likely_score_prob=0.114,1.8726511533148213,0.929333413876035
-27,Group Stage,Germany,Ecuador,1,0,Germany,most_likely_score_prob=0.122,1.8116547940458023,0.8832631680522257
-28,Group Stage,Curaçao,Ivory Coast,0,1,Ivory Coast,most_likely_score_prob=0.120,0.9312280899809673,1.7488335604874794
-29,Group Stage,Curaçao,Ecuador,0,1,Ecuador,most_likely_score_prob=0.128,0.9008959466784967,1.6621378807307923
-30,Group Stage,Ivory Coast,Ecuador,1,0,Ivory Coast,most_likely_score_prob=0.102,1.2698509698044766,1.2475350560391771
-31,Group Stage,Netherlands,Japan,1,0,Netherlands,most_likely_score_prob=0.106,1.489909341936199,1.156925345505336
-32,Group Stage,Netherlands,Sweden,1,0,Netherlands,most_likely_score_prob=0.110,1.499838432481167,1.1155211586468434
-33,Group Stage,Netherlands,Tunisia,1,0,Netherlands,most_likely_score_prob=0.117,1.8583839223161924,0.905851457551215
-34,Group Stage,Japan,Sweden,1,0,Japan,most_likely_score_prob=0.096,1.3532984200109235,1.2962280544218305
-35,Group Stage,Japan,Tunisia,1,0,Japan,most_likely_score_prob=0.109,1.6768126295335384,1.0525932774247997
-36,Group Stage,Sweden,Tunisia,1,0,Sweden,most_likely_score_prob=0.111,1.6168026524770136,1.0596079954780429
-37,Group Stage,Belgium,Egypt,1,0,Belgium,most_likely_score_prob=0.107,1.7847091717782015,1.0281456675995766
-38,Group Stage,Belgium,Iran,1,0,Belgium,most_likely_score_prob=0.111,1.716448700674548,1.0237400553153502
-39,Group Stage,Belgium,New Zealand,2,0,Belgium,most_likely_score_prob=0.117,2.0671385723953026,0.8432292234022533
-40,Group Stage,Egypt,Iran,0,1,Iran,most_likely_score_prob=0.096,1.2939704747338945,1.3396644731641856
-41,Group Stage,Egypt,New Zealand,1,0,Egypt,most_likely_score_prob=0.109,1.5583432693397234,1.103448309422505
-42,Group Stage,Iran,New Zealand,1,0,Iran,most_likely_score_prob=0.114,1.5516657561557468,1.0612442895010614
-43,Group Stage,Spain,Cape Verde,2,0,Spain,most_likely_score_prob=0.123,2.2963835319359096,0.7694613663701622
-44,Group Stage,Spain,Saudi Arabia,2,0,Spain,most_likely_score_prob=0.118,2.0604229626450885,0.831580135816615
-45,Group Stage,Spain,Uruguay,1,0,Spain,most_likely_score_prob=0.112,1.528884959899291,1.0883795229294144
-46,Group Stage,Cape Verde,Saudi Arabia,0,1,Saudi Arabia,most_likely_score_prob=0.107,1.1664584924786596,1.404994483782742
-47,Group Stage,Cape Verde,Uruguay,0,1,Uruguay,most_likely_score_prob=0.123,0.8655411426826608,1.8388693525925452
-48,Group Stage,Saudi Arabia,Uruguay,0,1,Uruguay,most_likely_score_prob=0.124,0.9354164516177403,1.6499197920096087
-49,Group Stage,France,Senegal,1,0,France,most_likely_score_prob=0.115,1.6351430012003223,1.020883127542096
-50,Group Stage,France,Iraq,2,0,France,most_likely_score_prob=0.126,2.2416134666963727,0.7496219621457619
-51,Group Stage,France,Norway,1,0,France,most_likely_score_prob=0.110,1.6394098497581644,1.0611141603929515
-52,Group Stage,Senegal,Iraq,1,0,Senegal,most_likely_score_prob=0.120,1.7443522553882385,0.9343196432888008
-53,Group Stage,Senegal,Norway,0,1,Norway,most_likely_score_prob=0.098,1.2757365671727094,1.3225597086151792
-54,Group Stage,Iraq,Norway,0,1,Norway,most_likely_score_prob=0.116,0.9367577177688946,1.8130938096334814
-55,Group Stage,Argentina,Algeria,1,0,Argentina,most_likely_score_prob=0.110,1.8513400882053397,0.9759218791795035
-56,Group Stage,Argentina,Austria,1,0,Argentina,most_likely_score_prob=0.111,1.6505367809934062,1.0521339890599262
-57,Group Stage,Argentina,Jordan,2,0,Argentina,most_likely_score_prob=0.126,2.3591573967105077,0.7395850701486384
-58,Group Stage,Algeria,Austria,0,1,Austria,most_likely_score_prob=0.104,1.1890913498093147,1.4379116900072657
-59,Group Stage,Algeria,Jordan,1,0,Algeria,most_likely_score_prob=0.113,1.6996008120332418,1.0107629153505082
-60,Group Stage,Austria,Jordan,1,0,Austria,most_likely_score_prob=0.119,1.832326767463644,0.9011317689703163
-61,Group Stage,Portugal,DR Congo,1,0,Portugal,most_likely_score_prob=0.113,1.8926840517083325,0.9267664686173742
-62,Group Stage,Portugal,Uzbekistan,2,0,Portugal,most_likely_score_prob=0.120,2.0231832977893345,0.8138208929572149
-63,Group Stage,Portugal,Colombia,1,0,Portugal,most_likely_score_prob=0.106,1.607274171885815,1.1138753626990918
-64,Group Stage,DR Congo,Uzbekistan,1,0,DR Congo,most_likely_score_prob=0.105,1.4346840994647796,1.178576289203964
-65,Group Stage,DR Congo,Colombia,0,1,Colombia,most_likely_score_prob=0.103,1.139753723948104,1.6131154937977643
-66,Group Stage,Uzbekistan,Colombia,0,1,Colombia,most_likely_score_prob=0.113,1.000851265970552,1.724338682682452
-67,Group Stage,England,Croatia,1,0,England,most_likely_score_prob=0.102,1.6238229261101182,1.1468461576979856
-68,Group Stage,England,Ghana,2,0,England,most_likely_score_prob=0.116,2.030190344087102,0.8521017324491226
-69,Group Stage,England,Panama,2,0,England,most_likely_score_prob=0.123,2.289007939459671,0.7697209845498592
-70,Group Stage,Croatia,Ghana,1,0,Croatia,most_likely_score_prob=0.110,1.7262219532035763,1.025852286344201
-71,Group Stage,Croatia,Panama,1,0,Croatia,most_likely_score_prob=0.110,1.9462883210240711,0.9266734261624436
-72,Group Stage,Ghana,Panama,1,0,Ghana,most_likely_score_prob=0.107,1.4460838003930805,1.1585767214309701
-73,Round of 32,South Korea,Canada,1,0,South Korea,most_likely_score_prob=0.088; W/D/L=0.38/0.25/0.36; slots 2A vs 2B,1.4100592763489548,1.3585514484147545
-74,Round of 32,Germany,Japan,1,0,Germany,most_likely_score_prob=0.110; W/D/L=0.54/0.24/0.22; slots 1E vs 2F,1.7449184424766628,1.02147572956274
-75,Round of 32,Netherlands,Morocco,1,0,Netherlands,most_likely_score_prob=0.101; W/D/L=0.40/0.26/0.33; slots 1F vs 2C,1.3794413389166396,1.230523330517038
-76,Round of 32,Brazil,Senegal,1,0,Brazil,most_likely_score_prob=0.118; W/D/L=0.54/0.24/0.22; slots 1C vs 3I,1.6809869905651875,0.9739658085087246
-77,Round of 32,France,Sweden,1,0,France,most_likely_score_prob=0.114; W/D/L=0.54/0.24/0.22; slots 1I vs 3F,1.7024332716569772,1.005538063804236
-78,Round of 32,Ivory Coast,Norway,0,1,Norway,most_likely_score_prob=0.103; W/D/L=0.31/0.26/0.44; slots 2E vs 2I,1.1856445698687008,1.4680023855610858
-79,Round of 32,Mexico,Scotland,1,0,Mexico,most_likely_score_prob=0.090; W/D/L=0.40/0.25/0.34; slots 1A vs 3C,1.458802961626993,1.3260862294255773
-80,Round of 32,England,Algeria,1,0,England,most_likely_score_prob=0.110; W/D/L=0.56/0.23/0.21; slots 1L vs 3J,1.8055086795565023,0.9963729398186565
-81,Round of 32,United States,Ecuador,1,0,United States,most_likely_score_prob=0.110; W/D/L=0.46/0.26/0.29; slots 1D vs 3E,1.4861834660850843,1.1190672631625205
-82,Round of 32,Belgium,Uruguay,1,0,Belgium,most_likely_score_prob=0.104; W/D/L=0.41/0.26/0.32; slots 1G vs 2H,1.3924650236117218,1.1991073783749422
-83,Round of 32,Colombia,Croatia,0,1,Croatia,most_likely_score_prob=0.092; W/D/L=0.34/0.25/0.41; slots 2K vs 2L,1.3046824861302722,1.4496762354562913
-84,Round of 32,Spain,Austria,1,0,Spain,most_likely_score_prob=0.110; W/D/L=0.50/0.25/0.25; slots 1H vs 2J,1.623965359821294,1.0729225322965552
-85,Round of 32,Switzerland,Egypt,1,0,Switzerland,most_likely_score_prob=0.109; W/D/L=0.47/0.26/0.28; slots 1B vs 3G,1.5187007688669292,1.1127325172467175
-86,Round of 32,Argentina,Paraguay,1,0,Argentina,most_likely_score_prob=0.114; W/D/L=0.59/0.22/0.19; slots 1J vs 3D,1.8551144549769627,0.9373928002120393
-87,Round of 32,Portugal,Czechia,1,0,Portugal,most_likely_score_prob=0.113; W/D/L=0.51/0.25/0.24; slots 1K vs 3A,1.638330574338754,1.0374059438683485
-88,Round of 32,Turkey,Iran,1,0,Turkey,most_likely_score_prob=0.109; W/D/L=0.46/0.26/0.28; slots 2D vs 2G,1.508267392596335,1.1219784264229025
-89,Round of 16,South Korea,Germany,0,1,Germany,most_likely_score_prob=0.110; W/D/L=0.21/0.23/0.56,0.99496945601703,1.7950191024685744
-90,Round of 16,Netherlands,Brazil,0,1,Brazil,most_likely_score_prob=0.111; W/D/L=0.28/0.26/0.46,1.1026676324375786,1.4962028294538834
-91,Round of 16,France,Norway,1,0,France,most_likely_score_prob=0.110; W/D/L=0.51/0.25/0.25,1.6394098497581644,1.0611141603929515
-92,Round of 16,Mexico,England,1,2,England,most_likely_score_prob=0.098; W/D/L=0.24/0.23/0.53,1.1324502193192176,1.781301256813695
-93,Round of 16,United States,Belgium,0,1,Belgium,most_likely_score_prob=0.095; W/D/L=0.32/0.25/0.43,1.2567829605947178,1.4954025623133544
-94,Round of 16,Croatia,Spain,0,1,Spain,most_likely_score_prob=0.101; W/D/L=0.27/0.25/0.49,1.1455013611503044,1.6382374438350387
-95,Round of 16,Switzerland,Argentina,0,1,Argentina,most_likely_score_prob=0.113; W/D/L=0.24/0.25/0.52,1.03297744806902,1.6471615637695467
-96,Round of 16,Portugal,Turkey,1,0,Portugal,most_likely_score_prob=0.108; W/D/L=0.47/0.25/0.28,1.5335116484808375,1.1193492543016237
-97,Quarter-final,Germany,Brazil,0,1,Brazil,most_likely_score_prob=0.097; W/D/L=0.36/0.26/0.38,1.2913974250688343,1.321031545144926
-98,Quarter-final,France,England,1,0,France,most_likely_score_prob=0.094; W/D/L=0.38/0.26/0.36,1.3492905483223996,1.311421713842108
-99,Quarter-final,Belgium,Spain,0,1,Spain,most_likely_score_prob=0.097; W/D/L=0.31/0.25/0.43,1.2378938294834678,1.497447566267206
-100,Quarter-final,Argentina,Portugal,1,0,Argentina,most_likely_score_prob=0.099; W/D/L=0.41/0.26/0.33,1.4215333700147095,1.2454240287344973
-101,Semi-final,Brazil,France,1,0,Brazil,most_likely_score_prob=0.100; W/D/L=0.39/0.26/0.35,1.3486870101257984,1.2516135234216514
-102,Semi-final,Spain,Argentina,0,1,Argentina,most_likely_score_prob=0.092; W/D/L=0.36/0.26/0.38,1.332835636163166,1.3814092404863638
-103,Third-place Match,France,Spain,1,0,France,most_likely_score_prob=0.093; W/D/L=0.38/0.26/0.36,1.3477083646449959,1.3230630764778148
-104,Final,Brazil,Argentina,1,0,Brazil,most_likely_score_prob=0.097; W/D/L=0.39/0.26/0.35,1.3586488362379738,1.282911445925324
+1,Group Stage,Mexico,South Korea,2,1,Mexico,most_likely_score_prob=0.091,1.569246637690105,1.2838213092493254
+2,Group Stage,Mexico,South Africa,2,0,Mexico,most_likely_score_prob=0.105,2.1175234286772433,0.9424111917699852
+3,Group Stage,Mexico,Czechia,1,0,Mexico,most_likely_score_prob=0.093,1.5285651534788653,1.2724134856089808
+4,Group Stage,South Korea,South Africa,1,0,South Korea,most_likely_score_prob=0.110,1.817697441308254,0.9888272669204036
+5,Group Stage,South Korea,Czechia,0,1,Czechia,most_likely_score_prob=0.095,1.3121313940252946,1.335082987506033
+6,Group Stage,South Africa,Czechia,0,1,Czechia,most_likely_score_prob=0.114,0.9631926981530116,1.801545682732074
+7,Group Stage,Canada,Switzerland,0,1,Switzerland,most_likely_score_prob=0.098,1.253782690801379,1.424651401399956
+8,Group Stage,Canada,Qatar,1,0,Canada,most_likely_score_prob=0.114,1.8945181222424166,0.9205508527610364
+9,Group Stage,Canada,Bosnia-Herzegovina,1,0,Canada,most_likely_score_prob=0.100,1.6411005849731464,1.1558884628098016
+10,Group Stage,Switzerland,Qatar,1,0,Switzerland,most_likely_score_prob=0.126,1.8979225780001845,0.8115983832452919
+11,Group Stage,Switzerland,Bosnia-Herzegovina,1,0,Switzerland,most_likely_score_prob=0.115,1.6440496485212823,1.019082438318966
+12,Group Stage,Qatar,Bosnia-Herzegovina,0,1,Bosnia-Herzegovina,most_likely_score_prob=0.114,1.0623169320161774,1.5398762174809153
+13,Group Stage,Brazil,Morocco,1,0,Brazil,most_likely_score_prob=0.111,1.5871140053587665,1.073266529286282
+14,Group Stage,Brazil,Scotland,1,0,Brazil,most_likely_score_prob=0.116,1.6719952725767546,0.995407726918262
+15,Group Stage,Brazil,Haiti,2,0,Brazil,most_likely_score_prob=0.128,2.260921503234877,0.7327830231947395
+16,Group Stage,Morocco,Scotland,1,0,Morocco,most_likely_score_prob=0.101,1.3946453122420202,1.2278074725310177
+17,Group Stage,Morocco,Haiti,1,0,Morocco,most_likely_score_prob=0.116,1.885880676548954,0.9038672769879469
+18,Group Stage,Scotland,Haiti,1,0,Scotland,most_likely_score_prob=0.117,1.7490717787789511,0.9522074715855406
+19,Group Stage,United States,Paraguay,1,0,United States,most_likely_score_prob=0.097,1.3829385994582186,1.2791505922686293
+20,Group Stage,United States,Australia,1,0,United States,most_likely_score_prob=0.104,1.4345972184977016,1.1905762175833803
+21,Group Stage,United States,Turkey,0,1,Turkey,most_likely_score_prob=0.099,1.2302023916288622,1.4712421598450487
+22,Group Stage,Paraguay,Australia,1,0,Paraguay,most_likely_score_prob=0.106,1.3316631053960821,1.19482089322129
+23,Group Stage,Paraguay,Turkey,0,1,Turkey,most_likely_score_prob=0.108,1.141933858492841,1.4764874735520834
+24,Group Stage,Australia,Turkey,0,1,Turkey,most_likely_score_prob=0.114,1.0628610127628242,1.531640539597587
+25,Group Stage,Germany,Curaçao,2,0,Germany,most_likely_score_prob=0.133,2.44120191508085,0.6738463802991657
+26,Group Stage,Germany,Ivory Coast,1,0,Germany,most_likely_score_prob=0.113,1.83023208167675,0.9508724640618154
+27,Group Stage,Germany,Ecuador,1,0,Germany,most_likely_score_prob=0.119,1.5892166501021894,1.0068910067755734
+28,Group Stage,Curaçao,Ivory Coast,0,1,Ivory Coast,most_likely_score_prob=0.120,0.9301924679757662,1.7507806097068912
+29,Group Stage,Curaçao,Ecuador,0,1,Ecuador,most_likely_score_prob=0.130,0.80769940200831,1.8539239670698078
+30,Group Stage,Ivory Coast,Ecuador,0,1,Ecuador,most_likely_score_prob=0.111,1.1397540197038991,1.3899346467652665
+31,Group Stage,Netherlands,Japan,1,0,Netherlands,most_likely_score_prob=0.101,1.403572202822918,1.2280906366800126
+32,Group Stage,Netherlands,Sweden,1,0,Netherlands,most_likely_score_prob=0.112,1.5618615920656642,1.071222645133152
+33,Group Stage,Netherlands,Tunisia,1,0,Netherlands,most_likely_score_prob=0.117,1.8415406075347385,0.9141366624401798
+34,Group Stage,Japan,Sweden,1,0,Japan,most_likely_score_prob=0.104,1.4959487896677166,1.1726226125778945
+35,Group Stage,Japan,Tunisia,1,0,Japan,most_likely_score_prob=0.111,1.763824948996968,1.0006671593752572
+36,Group Stage,Sweden,Tunisia,1,0,Sweden,most_likely_score_prob=0.109,1.5385258799173531,1.1135184919780354
+37,Group Stage,Belgium,Egypt,1,0,Belgium,most_likely_score_prob=0.107,1.7497119503063905,1.0487103334738448
+38,Group Stage,Belgium,Iran,1,0,Belgium,most_likely_score_prob=0.109,1.6560709709392833,1.0610639994358955
+39,Group Stage,Belgium,New Zealand,2,0,Belgium,most_likely_score_prob=0.115,2.025504042917313,0.8605619224315174
+40,Group Stage,Egypt,Iran,0,1,Iran,most_likely_score_prob=0.098,1.2734250263899072,1.3612786292089263
+41,Group Stage,Egypt,New Zealand,1,0,Egypt,most_likely_score_prob=0.109,1.5574981897315134,1.104047027078265
+42,Group Stage,Iran,New Zealand,1,0,Iran,most_likely_score_prob=0.115,1.5758453078615569,1.044960704403925
+43,Group Stage,Spain,Cape Verde,2,0,Spain,most_likely_score_prob=0.125,2.3840945914017815,0.7411528118749726
+44,Group Stage,Spain,Saudi Arabia,2,0,Spain,most_likely_score_prob=0.125,2.2695117430550646,0.7549671476075297
+45,Group Stage,Spain,Uruguay,1,0,Spain,most_likely_score_prob=0.116,1.6541627419860259,1.005951253182805
+46,Group Stage,Cape Verde,Saudi Arabia,0,1,Saudi Arabia,most_likely_score_prob=0.102,1.237560056388161,1.324273306199872
+47,Group Stage,Cape Verde,Uruguay,0,1,Uruguay,most_likely_score_prob=0.123,0.9020115196635721,1.7645196829423089
+48,Group Stage,Saudi Arabia,Uruguay,0,1,Uruguay,most_likely_score_prob=0.125,0.9188240983485851,1.6797144524935883
+49,Group Stage,France,Senegal,1,0,France,most_likely_score_prob=0.114,1.6072246072716436,1.0386164407211695
+50,Group Stage,France,Iraq,2,0,France,most_likely_score_prob=0.128,2.287935893173284,0.7344448287607813
+51,Group Stage,France,Norway,1,0,France,most_likely_score_prob=0.108,1.5854163835978854,1.0972518161558815
+52,Group Stage,Senegal,Iraq,1,0,Senegal,most_likely_score_prob=0.120,1.811325421877126,0.8997734793206655
+53,Group Stage,Senegal,Norway,0,1,Norway,most_likely_score_prob=0.100,1.2551509893436728,1.3442508486026339
+54,Group Stage,Iraq,Norway,0,1,Norway,most_likely_score_prob=0.116,0.887564568877183,1.9135842943367773
+55,Group Stage,Argentina,Algeria,1,0,Argentina,most_likely_score_prob=0.110,1.8781993559995898,0.9619656678671
+56,Group Stage,Argentina,Austria,1,0,Argentina,most_likely_score_prob=0.112,1.692553572133641,1.026015291963594
+57,Group Stage,Argentina,Jordan,2,0,Argentina,most_likely_score_prob=0.125,2.3407459562100654,0.7454023723116223
+58,Group Stage,Algeria,Austria,0,1,Austria,most_likely_score_prob=0.103,1.2019238548156435,1.4225596284879383
+59,Group Stage,Algeria,Jordan,1,0,Algeria,most_likely_score_prob=0.112,1.6622211841044108,1.0334927073068172
+60,Group Stage,Austria,Jordan,1,0,Austria,most_likely_score_prob=0.119,1.7728952399084743,0.9313397792085086
+61,Group Stage,Portugal,DR Congo,1,0,Portugal,most_likely_score_prob=0.113,1.9031047692377032,0.9216918286179053
+62,Group Stage,Portugal,Uzbekistan,1,0,Portugal,most_likely_score_prob=0.120,1.9137543644187227,0.8603553667260451
+63,Group Stage,Portugal,Colombia,1,0,Portugal,most_likely_score_prob=0.104,1.5487687513106265,1.1559524942966293
+64,Group Stage,DR Congo,Uzbekistan,1,0,DR Congo,most_likely_score_prob=0.100,1.3496547054878902,1.25282759749716
+65,Group Stage,DR Congo,Colombia,0,1,Colombia,most_likely_score_prob=0.105,1.092252522989748,1.6832686146440177
+66,Group Stage,Uzbekistan,Colombia,0,1,Colombia,most_likely_score_prob=0.112,1.019565640918645,1.6926880273934561
+67,Group Stage,England,Croatia,1,0,England,most_likely_score_prob=0.103,1.651929943871038,1.1273329662075986
+68,Group Stage,England,Ghana,2,0,England,most_likely_score_prob=0.124,2.2368177497740094,0.7733883145253467
+69,Group Stage,England,Panama,2,0,England,most_likely_score_prob=0.120,2.1865571795215963,0.8057861286704762
+70,Group Stage,Croatia,Ghana,1,0,Croatia,most_likely_score_prob=0.112,1.8695518791425547,0.9472049196321941
+71,Group Stage,Croatia,Panama,1,0,Croatia,most_likely_score_prob=0.110,1.8275436540327223,0.9868840411902046
+72,Group Stage,Ghana,Panama,0,1,Panama,most_likely_score_prob=0.100,1.2537563866943484,1.3363034845957646
+73,Round of 32,Czechia,Canada,0,1,Canada,most_likely_score_prob=0.092; W/D/L=0.35/0.26/0.39; slots 2A vs 2B,1.3211643846900665,1.3998227051460992
+74,Round of 32,Germany,Japan,1,0,Germany,most_likely_score_prob=0.106; W/D/L=0.49/0.25/0.26; slots 1E vs 2F,1.6114277917463113,1.106094761543577
+75,Round of 32,Netherlands,Morocco,1,0,Netherlands,most_likely_score_prob=0.103; W/D/L=0.41/0.26/0.32; slots 1F vs 2C,1.4016851704545985,1.210995725998919
+76,Round of 32,Brazil,Senegal,1,0,Brazil,most_likely_score_prob=0.115; W/D/L=0.49/0.25/0.26; slots 1C vs 3I,1.555367222333599,1.0526284917474715
+77,Round of 32,France,Scotland,1,0,France,most_likely_score_prob=0.115; W/D/L=0.55/0.24/0.21; slots 1I vs 3C,1.727741144818112,0.9821573693886083
+78,Round of 32,Ecuador,Norway,0,1,Norway,most_likely_score_prob=0.107; W/D/L=0.33/0.27/0.41; slots 2E vs 2I,1.1814255903276132,1.3546030149925248
+79,Round of 32,Mexico,Sweden,1,0,Mexico,most_likely_score_prob=0.094; W/D/L=0.45/0.25/0.30; slots 1A vs 3F,1.5725404383906498,1.2410104466550613
+80,Round of 32,England,Algeria,1,0,England,most_likely_score_prob=0.109; W/D/L=0.56/0.23/0.21; slots 1L vs 3J,1.7887056722976418,1.0057328149504885
+81,Round of 32,Turkey,Ivory Coast,1,0,Turkey,most_likely_score_prob=0.109; W/D/L=0.48/0.25/0.27; slots 1D vs 3E,1.5633719907773767,1.1027455101004249
+82,Round of 32,Belgium,Uruguay,1,0,Belgium,most_likely_score_prob=0.104; W/D/L=0.41/0.26/0.33; slots 1G vs 2H,1.3858242522795903,1.2048534157165178
+83,Round of 32,Colombia,Croatia,0,1,Croatia,most_likely_score_prob=0.089; W/D/L=0.36/0.26/0.38; slots 2K vs 2L,1.3527235865560447,1.3981919246151377
+84,Round of 32,Spain,Austria,1,0,Spain,most_likely_score_prob=0.111; W/D/L=0.53/0.24/0.23; slots 1H vs 2J,1.691966212118391,1.0298013126632284
+85,Round of 32,Switzerland,Egypt,1,0,Switzerland,most_likely_score_prob=0.111; W/D/L=0.48/0.25/0.26; slots 1B vs 3G,1.5573883383710017,1.0850907816951
+86,Round of 32,Argentina,Paraguay,1,0,Argentina,most_likely_score_prob=0.114; W/D/L=0.59/0.22/0.18; slots 1J vs 3D,1.8655893390325136,0.9321295406664948
+87,Round of 32,Portugal,South Korea,1,0,Portugal,most_likely_score_prob=0.110; W/D/L=0.53/0.24/0.23; slots 1K vs 3A,1.702842081304913,1.0338545956707104
+88,Round of 32,United States,Iran,1,0,United States,most_likely_score_prob=0.101; W/D/L=0.43/0.26/0.31; slots 2D vs 2G,1.4658401284172633,1.2112397075223742
+89,Round of 16,Canada,Germany,0,1,Germany,most_likely_score_prob=0.104; W/D/L=0.23/0.23/0.54,1.0647962421696389,1.7707474149263307
+90,Round of 16,Netherlands,Brazil,0,1,Brazil,most_likely_score_prob=0.109; W/D/L=0.30/0.26/0.44,1.1363738050079355,1.4518237082988719
+91,Round of 16,France,Norway,1,0,France,most_likely_score_prob=0.108; W/D/L=0.49/0.25/0.26,1.5854163835978854,1.0972518161558815
+92,Round of 16,Mexico,England,1,2,England,most_likely_score_prob=0.097; W/D/L=0.25/0.24/0.51,1.1507707851543072,1.7529424842687287
+93,Round of 16,Turkey,Belgium,0,1,Belgium,most_likely_score_prob=0.095; W/D/L=0.35/0.26/0.39,1.2888300148755287,1.3898531153983413
+94,Round of 16,Croatia,Spain,0,1,Spain,most_likely_score_prob=0.104; W/D/L=0.24/0.24/0.53,1.0822529208762492,1.7339784311055824
+95,Round of 16,Switzerland,Argentina,0,1,Argentina,most_likely_score_prob=0.114; W/D/L=0.23/0.24/0.53,1.0097981877182938,1.684971085702433
+96,Round of 16,Portugal,United States,1,0,Portugal,most_likely_score_prob=0.106; W/D/L=0.50/0.25/0.26,1.6390581128915616,1.0987836782323541
+97,Quarter-final,Germany,Brazil,0,1,Brazil,most_likely_score_prob=0.096; W/D/L=0.37/0.26/0.37,1.3046598725162428,1.3076026723690173
+98,Quarter-final,France,England,1,0,France,most_likely_score_prob=0.094; W/D/L=0.37/0.26/0.37,1.337306103761055,1.3231741920382984
+99,Quarter-final,Belgium,Spain,0,1,Spain,most_likely_score_prob=0.102; W/D/L=0.27/0.25/0.49,1.1386856142642563,1.6279129893591722
+100,Quarter-final,Argentina,Portugal,1,0,Argentina,most_likely_score_prob=0.102; W/D/L=0.44/0.26/0.31,1.4822632883457543,1.1943976691482883
+101,Semi-final,Brazil,France,0,1,France,most_likely_score_prob=0.099; W/D/L=0.35/0.26/0.38,1.269576665150655,1.329604542263898
+102,Semi-final,Spain,Argentina,0,1,Argentina,most_likely_score_prob=0.090; W/D/L=0.37/0.26/0.37,1.3541734784011636,1.35964224171571
+103,Third-place Match,Brazil,Spain,0,1,Spain,most_likely_score_prob=0.099; W/D/L=0.33/0.26/0.41,1.2424066169146681,1.4076316236439552
+104,Final,France,Argentina,0,1,Argentina,most_likely_score_prob=0.096; W/D/L=0.34/0.26/0.40,1.2791096602635794,1.3893761024245657
