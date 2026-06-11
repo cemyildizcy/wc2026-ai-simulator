@@ -1,0 +1,717 @@
+{
+  "tournament": "2026 FIFA World Cup",
+  "hosts": [
+    "United States",
+    "Mexico",
+    "Canada"
+  ],
+  "format": {
+    "groups": 12,
+    "teams_per_group": 4,
+    "advance_per_group": "Top 2 + 8 best 3rd-place teams",
+    "total_teams": 48,
+    "total_matches": 104
+  },
+  "group_stage": {
+    "matches": [
+      {
+        "match_number": 1,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "Mexico",
+        "away_team": "South Korea"
+      },
+      {
+        "match_number": 2,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "Mexico",
+        "away_team": "South Africa"
+      },
+      {
+        "match_number": 3,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "Mexico",
+        "away_team": "Czechia"
+      },
+      {
+        "match_number": 4,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "South Korea",
+        "away_team": "South Africa"
+      },
+      {
+        "match_number": 5,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "South Korea",
+        "away_team": "Czechia"
+      },
+      {
+        "match_number": 6,
+        "stage": "Group Stage",
+        "group": "A",
+        "home_team": "South Africa",
+        "away_team": "Czechia"
+      },
+      {
+        "match_number": 7,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Canada",
+        "away_team": "Switzerland"
+      },
+      {
+        "match_number": 8,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Canada",
+        "away_team": "Qatar"
+      },
+      {
+        "match_number": 9,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Canada",
+        "away_team": "Bosnia-Herzegovina"
+      },
+      {
+        "match_number": 10,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Switzerland",
+        "away_team": "Qatar"
+      },
+      {
+        "match_number": 11,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Switzerland",
+        "away_team": "Bosnia-Herzegovina"
+      },
+      {
+        "match_number": 12,
+        "stage": "Group Stage",
+        "group": "B",
+        "home_team": "Qatar",
+        "away_team": "Bosnia-Herzegovina"
+      },
+      {
+        "match_number": 13,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Brazil",
+        "away_team": "Morocco"
+      },
+      {
+        "match_number": 14,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Brazil",
+        "away_team": "Scotland"
+      },
+      {
+        "match_number": 15,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Brazil",
+        "away_team": "Haiti"
+      },
+      {
+        "match_number": 16,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Morocco",
+        "away_team": "Scotland"
+      },
+      {
+        "match_number": 17,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Morocco",
+        "away_team": "Haiti"
+      },
+      {
+        "match_number": 18,
+        "stage": "Group Stage",
+        "group": "C",
+        "home_team": "Scotland",
+        "away_team": "Haiti"
+      },
+      {
+        "match_number": 19,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "United States",
+        "away_team": "Paraguay"
+      },
+      {
+        "match_number": 20,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "United States",
+        "away_team": "Australia"
+      },
+      {
+        "match_number": 21,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "United States",
+        "away_team": "Turkey"
+      },
+      {
+        "match_number": 22,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "Paraguay",
+        "away_team": "Australia"
+      },
+      {
+        "match_number": 23,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "Paraguay",
+        "away_team": "Turkey"
+      },
+      {
+        "match_number": 24,
+        "stage": "Group Stage",
+        "group": "D",
+        "home_team": "Australia",
+        "away_team": "Turkey"
+      },
+      {
+        "match_number": 25,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Germany",
+        "away_team": "Cura\u00e7ao"
+      },
+      {
+        "match_number": 26,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Germany",
+        "away_team": "Ivory Coast"
+      },
+      {
+        "match_number": 27,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Germany",
+        "away_team": "Ecuador"
+      },
+      {
+        "match_number": 28,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Cura\u00e7ao",
+        "away_team": "Ivory Coast"
+      },
+      {
+        "match_number": 29,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Cura\u00e7ao",
+        "away_team": "Ecuador"
+      },
+      {
+        "match_number": 30,
+        "stage": "Group Stage",
+        "group": "E",
+        "home_team": "Ivory Coast",
+        "away_team": "Ecuador"
+      },
+      {
+        "match_number": 31,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Netherlands",
+        "away_team": "Japan"
+      },
+      {
+        "match_number": 32,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Netherlands",
+        "away_team": "Sweden"
+      },
+      {
+        "match_number": 33,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Netherlands",
+        "away_team": "Tunisia"
+      },
+      {
+        "match_number": 34,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Japan",
+        "away_team": "Sweden"
+      },
+      {
+        "match_number": 35,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Japan",
+        "away_team": "Tunisia"
+      },
+      {
+        "match_number": 36,
+        "stage": "Group Stage",
+        "group": "F",
+        "home_team": "Sweden",
+        "away_team": "Tunisia"
+      },
+      {
+        "match_number": 37,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Belgium",
+        "away_team": "Egypt"
+      },
+      {
+        "match_number": 38,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Belgium",
+        "away_team": "Iran"
+      },
+      {
+        "match_number": 39,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Belgium",
+        "away_team": "New Zealand"
+      },
+      {
+        "match_number": 40,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Egypt",
+        "away_team": "Iran"
+      },
+      {
+        "match_number": 41,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Egypt",
+        "away_team": "New Zealand"
+      },
+      {
+        "match_number": 42,
+        "stage": "Group Stage",
+        "group": "G",
+        "home_team": "Iran",
+        "away_team": "New Zealand"
+      },
+      {
+        "match_number": 43,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Spain",
+        "away_team": "Cape Verde"
+      },
+      {
+        "match_number": 44,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Spain",
+        "away_team": "Saudi Arabia"
+      },
+      {
+        "match_number": 45,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Spain",
+        "away_team": "Uruguay"
+      },
+      {
+        "match_number": 46,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Cape Verde",
+        "away_team": "Saudi Arabia"
+      },
+      {
+        "match_number": 47,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Cape Verde",
+        "away_team": "Uruguay"
+      },
+      {
+        "match_number": 48,
+        "stage": "Group Stage",
+        "group": "H",
+        "home_team": "Saudi Arabia",
+        "away_team": "Uruguay"
+      },
+      {
+        "match_number": 49,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "France",
+        "away_team": "Senegal"
+      },
+      {
+        "match_number": 50,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "France",
+        "away_team": "Iraq"
+      },
+      {
+        "match_number": 51,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "France",
+        "away_team": "Norway"
+      },
+      {
+        "match_number": 52,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "Senegal",
+        "away_team": "Iraq"
+      },
+      {
+        "match_number": 53,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "Senegal",
+        "away_team": "Norway"
+      },
+      {
+        "match_number": 54,
+        "stage": "Group Stage",
+        "group": "I",
+        "home_team": "Iraq",
+        "away_team": "Norway"
+      },
+      {
+        "match_number": 55,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Argentina",
+        "away_team": "Algeria"
+      },
+      {
+        "match_number": 56,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Argentina",
+        "away_team": "Austria"
+      },
+      {
+        "match_number": 57,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Argentina",
+        "away_team": "Jordan"
+      },
+      {
+        "match_number": 58,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Algeria",
+        "away_team": "Austria"
+      },
+      {
+        "match_number": 59,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Algeria",
+        "away_team": "Jordan"
+      },
+      {
+        "match_number": 60,
+        "stage": "Group Stage",
+        "group": "J",
+        "home_team": "Austria",
+        "away_team": "Jordan"
+      },
+      {
+        "match_number": 61,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "Portugal",
+        "away_team": "DR Congo"
+      },
+      {
+        "match_number": 62,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "Portugal",
+        "away_team": "Uzbekistan"
+      },
+      {
+        "match_number": 63,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "Portugal",
+        "away_team": "Colombia"
+      },
+      {
+        "match_number": 64,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "DR Congo",
+        "away_team": "Uzbekistan"
+      },
+      {
+        "match_number": 65,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "DR Congo",
+        "away_team": "Colombia"
+      },
+      {
+        "match_number": 66,
+        "stage": "Group Stage",
+        "group": "K",
+        "home_team": "Uzbekistan",
+        "away_team": "Colombia"
+      },
+      {
+        "match_number": 67,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "England",
+        "away_team": "Croatia"
+      },
+      {
+        "match_number": 68,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "England",
+        "away_team": "Ghana"
+      },
+      {
+        "match_number": 69,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "England",
+        "away_team": "Panama"
+      },
+      {
+        "match_number": 70,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "Croatia",
+        "away_team": "Ghana"
+      },
+      {
+        "match_number": 71,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "Croatia",
+        "away_team": "Panama"
+      },
+      {
+        "match_number": 72,
+        "stage": "Group Stage",
+        "group": "L",
+        "home_team": "Ghana",
+        "away_team": "Panama"
+      }
+    ],
+    "total_matches": 72,
+    "third_place_ranking_criteria": [
+      "1. Points",
+      "2. Goal difference",
+      "3. Goals scored",
+      "4. Fair play points",
+      "5. Drawing of lots"
+    ]
+  },
+  "knockout_stage": {
+    "round_of_32": [
+      {
+        "match": 73,
+        "home": "2A",
+        "away": "2B",
+        "description": "Runner-up A vs Runner-up B"
+      },
+      {
+        "match": 74,
+        "home": "1E",
+        "away": "2F",
+        "description": "Winner E vs Runner-up F"
+      },
+      {
+        "match": 75,
+        "home": "1F",
+        "away": "2C",
+        "description": "Winner F vs Runner-up C"
+      },
+      {
+        "match": 76,
+        "home": "1C",
+        "away": "3D/E/F/I/J",
+        "description": "Winner C vs Best 3rd"
+      },
+      {
+        "match": 77,
+        "home": "1I",
+        "away": "3C/D/F/G/H",
+        "description": "Winner I vs Best 3rd"
+      },
+      {
+        "match": 78,
+        "home": "2E",
+        "away": "2I",
+        "description": "Runner-up E vs Runner-up I"
+      },
+      {
+        "match": 79,
+        "home": "1A",
+        "away": "3C/E/F/H/I",
+        "description": "Winner A vs Best 3rd"
+      },
+      {
+        "match": 80,
+        "home": "1L",
+        "away": "3E/H/I/J/K",
+        "description": "Winner L vs Best 3rd"
+      },
+      {
+        "match": 81,
+        "home": "1D",
+        "away": "3B/E/F/I/J",
+        "description": "Winner D vs Best 3rd"
+      },
+      {
+        "match": 82,
+        "home": "1G",
+        "away": "2H",
+        "description": "Winner G vs Runner-up H"
+      },
+      {
+        "match": 83,
+        "home": "2K",
+        "away": "2L",
+        "description": "Runner-up K vs Runner-up L"
+      },
+      {
+        "match": 84,
+        "home": "1H",
+        "away": "2J",
+        "description": "Winner H vs Runner-up J"
+      },
+      {
+        "match": 85,
+        "home": "1B",
+        "away": "3E/F/G/I/J",
+        "description": "Winner B vs Best 3rd"
+      },
+      {
+        "match": 86,
+        "home": "1J",
+        "away": "3C/D/F/G/H",
+        "description": "Winner J vs Best 3rd"
+      },
+      {
+        "match": 87,
+        "home": "1K",
+        "away": "3D/E/I/J/L",
+        "description": "Winner K vs Best 3rd"
+      },
+      {
+        "match": 88,
+        "home": "2D",
+        "away": "2G",
+        "description": "Runner-up D vs Runner-up G"
+      }
+    ],
+    "round_of_16": [
+      {
+        "match": 89,
+        "home": "W73",
+        "away": "W74"
+      },
+      {
+        "match": 90,
+        "home": "W75",
+        "away": "W76"
+      },
+      {
+        "match": 91,
+        "home": "W77",
+        "away": "W78"
+      },
+      {
+        "match": 92,
+        "home": "W79",
+        "away": "W80"
+      },
+      {
+        "match": 93,
+        "home": "W81",
+        "away": "W82"
+      },
+      {
+        "match": 94,
+        "home": "W83",
+        "away": "W84"
+      },
+      {
+        "match": 95,
+        "home": "W85",
+        "away": "W86"
+      },
+      {
+        "match": 96,
+        "home": "W87",
+        "away": "W88"
+      }
+    ],
+    "quarter_finals": [
+      {
+        "match": 97,
+        "home": "W89",
+        "away": "W90"
+      },
+      {
+        "match": 98,
+        "home": "W91",
+        "away": "W92"
+      },
+      {
+        "match": 99,
+        "home": "W93",
+        "away": "W94"
+      },
+      {
+        "match": 100,
+        "home": "W95",
+        "away": "W96"
+      }
+    ],
+    "semi_finals": [
+      {
+        "match": 101,
+        "home": "W97",
+        "away": "W98"
+      },
+      {
+        "match": 102,
+        "home": "W99",
+        "away": "W100"
+      }
+    ],
+    "third_place_match": {
+      "match": 103,
+      "home": "L101",
+      "away": "L102"
+    },
+    "final": {
+      "match": 104,
+      "home": "W101",
+      "away": "W102"
+    }
+  }
+}

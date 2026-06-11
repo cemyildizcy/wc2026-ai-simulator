@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+*.env
+.env.*
+.venv/
+venv/
+env/
+
+# Credentials
+*.key
+*.pem
+credentials*.json
+secrets*.json
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large external datasets
+# EA FC 25 data must be downloaded manually and should not be committed.
+data/raw/external/eafc25/
+
+# Generated caches and outputs
+outputs/*.csv
+outputs/figures/
+
+# Optional large generated datasets
+# Keep source code and small config files in git; regenerate these locally.
+data/final/historical_matches.csv
+data/processed/*.csv
+
+# Streamlit
+.streamlit/secrets.toml

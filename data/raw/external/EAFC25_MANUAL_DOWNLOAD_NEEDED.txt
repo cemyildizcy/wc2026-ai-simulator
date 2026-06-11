@@ -1,0 +1,3 @@
+EA FC 25 player data requires Kaggle authentication.
+Download from: https://www.kaggle.com/datasets/stefanoleone992/ea-sports-fc-2025-complete-player-dataset
+Place male_players.csv in this directory as eafc25_players.csv
