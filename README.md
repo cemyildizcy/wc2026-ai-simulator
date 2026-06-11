@@ -1,182 +1,140 @@
-# 2026 FIFA World Cup AI Simulator
+# 2026 FIFA Dünya Kupası AI Simülatörü
 
-Interactive data science project that simulates the 2026 FIFA World Cup with 48 teams using team-strength features, a Poisson expected-goals model, and 10,000 Monte Carlo tournament runs.
+Bu proje, **2026 FIFA Dünya Kupası'nı 48 takımlı yeni formatıyla veri bilimi kullanarak simüle eden** uçtan uca bir futbol analitiği projesidir.
 
-The project includes:
+Model; takım gücü, FIFA/ELO benzeri reytingler, EA FC 25 oyuncu verileri, Dünya Kupası geçmişi, son form, piyasa değeri ve StatsBomb xG göstergelerini birleştirerek maç skorlarını olasılıksal olarak üretir. Ardından turnuvayı **10.000 kez Monte Carlo simülasyonu** ile çalıştırır ve takımların şampiyonluk / final / yarı final / eleme turu olasılıklarını hesaplar.
 
-- End-to-end data preparation scripts
-- EA FC 25 squad-strength feature engineering
-- StatsBomb World Cup xG/style features
-- 48-team group and knockout tournament simulation
-- Monte Carlo champion/stage probabilities
-- Most-likely bracket path generation
-- Match scoreline probability distributions
-- Turkish Streamlit dashboard for interactive exploration
+Ayrıca proje içinde sonuçları incelemek için **Türkçe Streamlit dashboard** bulunur.
 
-> This is a probability model, not a betting tool or a claim of certain predictions.
+> Not: Bu proje bir “kesin tahmin” veya bahis aracı değildir. Amaç, Dünya Kupası sonuçlarını olasılık dağılımları üzerinden modelleyen bir veri bilimi portföy projesi oluşturmaktır.
 
 ---
 
-## Dashboard
+## Proje Ne Yapıyor?
 
-Run the dashboard locally:
+Bu proje aşağıdaki süreci uçtan uca gerçekleştirir:
 
-```bash
-streamlit run dashboard/app.py
-```
-
-Dashboard pages:
-
-- Genel Bakış — tournament summary and top probabilities
-- Takım İnceleme — team-level probabilities, strengths, squad details
-- Maç İnceleme — W/D/L probabilities, xG, top scorelines
-- Grup Aşaması — 12 group tables and group strength comparison
-- Eleme Turu — most-likely knockout path
-- Metodoloji — data sources, model logic, limitations
+1. 2026 Dünya Kupası'na uygun **48 takımlı veri seti** hazırlar.
+2. Takımların grup bilgilerini, FIFA sırasını, ELO benzeri gücünü, geçmiş başarılarını ve güncel formunu işler.
+3. EA FC 25 oyuncu verilerinden takımlar için kadro gücü feature'ları üretir.
+4. StatsBomb açık verisinden Dünya Kupası xG / xGA / şut / pas göstergeleri ekler.
+5. Her takım için birleşik bir **team power score** hesaplar.
+6. Maçlar için Poisson tabanlı beklenen gol modeli kurar.
+7. 2026 formatına uygun grup aşaması ve eleme turunu simüle eder.
+8. Turnuvayı 10.000 kez çalıştırarak Monte Carlo olasılıklarını üretir.
+9. En olası bracket yolunu ve maç skor dağılımlarını çıkarır.
+10. Sonuçları CSV, rapor, görsel ve interaktif dashboard olarak sunar.
 
 ---
 
-## Project Structure
+## Kullanılan Ana Yöntemler
+
+### 1. Feature Engineering
+
+Takım gücünü tek bir kaynaktan değil, birden fazla veri ailesinden oluşturduk.
+
+Kullanılan feature grupları:
+
+- FIFA sıralaması
+- ELO benzeri takım reytingi
+- Kadro piyasa değeri
+- Dünya Kupası geçmişi
+- Son 10 / son 20 maç formu
+- Eleme performansı
+- Grup zorluk endeksi
+- Teknik direktör Dünya Kupası deneyimi
+- StatsBomb xG / xGA / şut / pas verileri
+- EA FC 25 oyuncu reytingleri
+
+EA FC 25 tarafında üretilen bazı özellikler:
+
+- İlk 11 ortalama overall reytingi
+- İlk 23 ortalama overall reytingi
+- Hücum / orta saha / savunma / kaleci reytingleri
+- Kadro derinliği
+- Yıldız oyuncu ve reytingi
+- Ortalama yaş
+- Genç yetenek skoru
+- Hız, şut, pas, dripling, savunma, fizik ortalamaları
+
+---
+
+### 2. Takım Güç Skoru
+
+Her takım için `team_power` adında birleşik bir güç skoru hesaplandı.
+
+Bu skor; tarihsel başarı, güncel kadro kalitesi, form, reyting ve performans göstergelerinden oluşur. Daha sonra bu skor, maç bazında beklenen gol değerlerinin hesaplanmasında kullanılır.
+
+Örnek çıktı:
 
 ```text
-dashboard/
-  app.py                              # Streamlit dashboard
-
-src/
-  pipeline.py                         # Full data preparation pipeline
-  add_eafc25_features.py              # EA FC squad feature builder
-  simulate_tournament.py              # Monte Carlo simulator
-  generate_most_likely_path.py        # Central bracket path
-  generate_match_score_distributions.py
-  create_eda_figures.py
-  run_final_pipeline.py               # Final reproducible run script
-
-data/
-  raw/                                # Raw/local source data
-  processed/                          # Processed intermediate data
-  final/                              # Final model-ready datasets
-
-outputs/
-  *.csv                               # Generated simulation outputs
-  figures/                            # Generated charts
-
-reports/
-  *.md                                # Data/model/simulation reports
+Germany      0.917
+Brazil       0.904
+Argentina    0.885
+France       0.878
+England      0.865
+Spain        0.855
+Portugal     0.801
 ```
 
 ---
 
-## Installation
+### 3. Poisson xG Maç Modeli
 
-Recommended Python version: 3.10+
-
-```bash
-git clone https://github.com/cemyildizcy/wc2026-ai-simulator.git
-cd wc2026-ai-simulator
-python -m venv .venv
-source .venv/bin/activate  # Windows Git Bash
-pip install -r requirements.txt
-```
-
----
-
-## How to Run
-
-Run the final model pipeline:
-
-```bash
-python src/run_final_pipeline.py
-```
-
-This executes:
-
-1. EA FC 25 team feature generation
-2. Final enriched dataset refresh
-3. Calibrated Monte Carlo tournament simulation
-4. Most-likely bracket path generation
-5. Match scoreline distribution generation
-6. EDA/chart output generation
-
-Then run the dashboard:
-
-```bash
-streamlit run dashboard/app.py
-```
-
-Note: `src/run_final_pipeline.py` assumes the required local source datasets already exist under `data/`. Use `src/pipeline.py` for the broader data preparation workflow.
-
----
-
-## Data Sources
-
-Feature families used by the model:
-
-- FIFA ranking / snapshot features
-- ELO-style team rating proxy
-- EA FC 25 player ratings and squad structure
-- StatsBomb open World Cup 2018/2022 match features
-- World Cup historical performance
-- Recent international form
-- Qualification and group-difficulty features
-- Coach experience proxy
-
-EA FC 25 player files are large and are not committed to GitHub. Download them locally and place them under:
+Her maç için iki takımın beklenen gol değeri hesaplanır:
 
 ```text
-data/raw/external/eafc25/
+home_xG
+away_xG
 ```
 
----
+Sonra bu xG değerlerinden Poisson dağılımı ile olası skorlar üretilir.
 
-## Model Summary
+Model her maç için şunları hesaplar:
 
-### Team Power Score
+- Ev sahibi kazanma olasılığı
+- Beraberlik olasılığı
+- Deplasman kazanma olasılığı
+- En olası skor
+- İlk 5 skor dağılımı
+- Maçın xG değerleri
 
-The team power score combines:
+Örnek final dağılımı:
 
-- FIFA rank
-- ELO rating
-- EA FC 25 squad strength
-- Recent international form
-- World Cup historical pedigree
-- Squad market value
-- StatsBomb xG/xGA indicators
-- Coach World Cup experience
+```text
+Brazil vs Argentina
 
-### Match Model
+1-1 → %12.4
+1-0 → %9.7
+0-1 → %9.1
+2-1 → %8.4
+1-2 → %8.0
+```
 
-Match scores are generated using a Poisson expected-goals model.
-
-For each matchup:
-
-- Home/away expected goals are calculated from relative team strength
-- Scorelines are sampled from Poisson distributions
-- Win/draw/loss probabilities are aggregated from the score distribution
-- Knockout draws are resolved with extra-time/penalty logic
-
-### Tournament Model
-
-The tournament format follows the expanded 48-team structure:
-
-- 12 groups × 4 teams
-- Top 2 from each group advance
-- Best 8 third-place teams advance
-- 32-team knockout bracket
-- 104 total matches
-
-Monte Carlo simulation runs the tournament 10,000 times and estimates:
-
-- Champion probability
-- Runner-up probability
-- Third-place probability
-- Knockout/quarter/semi/final reach probabilities
-- Final matchup probabilities
+Burada önemli nokta: Model “final kesin 1-0 biter” demiyor. 1-0 sadece merkezi bracket’te seçilen skor. Asıl çıktı bir olasılık dağılımı.
 
 ---
 
-## Current Results
+### 4. Monte Carlo Simülasyonu
 
-Top champion probabilities from the current run:
+Turnuva tek sefer değil, **10.000 kez** çalıştırıldı.
+
+Her simülasyonda:
+
+1. Grup maçları oynatılır.
+2. Her grup için puan tablosu oluşturulur.
+3. İlk 2 takım çıkar.
+4. En iyi 8 üçüncü takım eklenir.
+5. 32 takımlı eleme turu oynatılır.
+6. Şampiyon, finalist, üçüncü ve aşama ulaşma bilgileri kaydedilir.
+
+Bu 10.000 çalıştırmadan sonra takımların şampiyonluk olasılıkları hesaplandı.
+
+---
+
+## Güncel Model Sonuçları
+
+### En Yüksek Şampiyonluk Olasılıkları
 
 ```text
 Argentina      10.27%
@@ -191,72 +149,437 @@ Netherlands     3.24%
 Uruguay         2.51%
 ```
 
-Central most-likely final:
+### Merkezi En Olası Final
 
 ```text
 Brazil 1-0 Argentina
 ```
 
-But the final is highly uncertain. Top scoreline distribution:
+Final xG:
 
 ```text
-1-1: 12.4%
-1-0: 9.7%
-0-1: 9.1%
-2-1: 8.4%
-1-2: 8.0%
+Brazil:    1.36
+Argentina: 1.28
 ```
 
-This means the model should be read as a probability distribution, not as one exact-score prediction.
+Final sonuç olasılıkları:
+
+```text
+Brazil kazanır:    %38.7
+Beraberlik:        %26.1
+Argentina kazanır: %35.2
+```
+
+Bu sonuçlar, finalin çok dengeli olduğunu ve küçük farkların büyük etkiler yaratabileceğini gösteriyor.
 
 ---
 
-## Key Output Files
+## Streamlit Dashboard
+
+Projede sonuçları incelemek için Türkçe bir Streamlit dashboard bulunuyor.
+
+Çalıştırmak için:
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Streamlit Cloud deploy ayarı:
+
+```text
+Repository: cemyildizcy/wc2026-ai-simulator
+Branch: main
+Main file path: dashboard/app.py
+```
+
+Dashboard sayfaları:
+
+### Genel Bakış
+
+- Monte Carlo favorisi
+- Merkezi final
+- Takım ve maç sayısı
+- İlk 15 şampiyonluk olasılığı
+- En olası final eşleşmeleri
+- Aşama ulaşma olasılıkları
+
+### Takım İnceleme
+
+Seçilen takım için:
+
+- Şampiyonluk olasılığı
+- İkincilik olasılığı
+- Takım gücü
+- FIFA sırası
+- ELO reytingi
+- Aşama ulaşma grafiği
+- Hücum / savunma / kadro gücü radar grafiği
+- Yıldız oyuncu
+- Kadro piyasa değeri
+- Son form bilgileri
+- En olası turnuva yolu
+
+### Maç İnceleme
+
+Seçilen maç için:
+
+- Kazanma / beraberlik / kaybetme olasılıkları
+- xG karşılaştırması
+- En olası 5 skor
+- Maç sonucu dağılımı
+
+### Grup Aşaması
+
+- 12 grup tablosu
+- Puan, galibiyet, beraberlik, mağlubiyet
+- Atılan/yenen gol
+- Averaj
+- Ortalama grup gücü
+
+### Eleme Turu
+
+- Son 32
+- Son 16
+- Çeyrek final
+- Yarı final
+- Üçüncülük maçı
+- Final
+- Her maç için skor, xG ve G/B/M dağılımı
+
+### Metodoloji
+
+- Veri kaynakları
+- Model mimarisi
+- Poisson xG yaklaşımı
+- Monte Carlo süreci
+- Sınırlamalar
+
+---
+
+## Dosya Yapısı
+
+```text
+wc2026-ai-simulator/
+│
+├── dashboard/
+│   └── app.py
+│       Türkçe Streamlit dashboard.
+│
+├── src/
+│   ├── pipeline.py
+│   │   Ham verileri işler, temizler, final datasetleri hazırlar.
+│   │
+│   ├── add_eafc25_features.py
+│   │   EA FC 25 oyuncu verilerinden takım bazlı kadro feature'ları üretir.
+│   │
+│   ├── simulate_tournament.py
+│   │   Grup aşaması, eleme turu ve Monte Carlo simülasyonunu çalıştırır.
+│   │
+│   ├── generate_most_likely_path.py
+│   │   En olası turnuva yolunu ve merkezi bracket çıktısını üretir.
+│   │
+│   ├── generate_match_score_distributions.py
+│   │   Maç bazlı skor dağılımlarını hesaplar.
+│   │
+│   ├── create_eda_figures.py
+│   │   Grafik ve görsel çıktıları üretir.
+│   │
+│   └── run_final_pipeline.py
+│       Final pipeline'ı tek komutla çalıştırır.
+│
+├── data/
+│   ├── raw/
+│   │   Ham veri kaynakları.
+│   │
+│   ├── processed/
+│   │   Temizlenmiş ara veri dosyaları.
+│   │
+│   └── final/
+│       Modelin kullandığı final veri setleri.
+│
+├── outputs/
+│   ├── *.csv
+│   │   Simülasyon ve model çıktı dosyaları.
+│   │
+│   └── figures/
+│       Grafik çıktıları.
+│
+├── reports/
+│   Markdown formatında veri, model ve simülasyon raporları.
+│
+├── requirements.txt
+│   Proje bağımlılıkları.
+│
+├── README.md
+│   Proje açıklaması.
+│
+└── LICENSE
+    MIT lisansı.
+```
+
+---
+
+## Ana Veri Dosyaları
+
+### Final Takım Veri Seti
+
+```text
+data/final/team_features_2026_enriched.csv
+```
+
+Bu dosya 48 takım için modelin kullandığı zenginleştirilmiş feature setidir.
+
+İçerdiği bazı kolonlar:
+
+```text
+team
+confederation
+group
+fifa_rank
+wc_titles
+best_finish
+wc_appearances
+is_host
+elo_rating
+squad_market_value_eur_m
+recent form features
+StatsBomb xG features
+EA FC squad features
+```
+
+### 2026 Bracket Dosyası
+
+```text
+data/final/wc2026_bracket.json
+```
+
+Turnuva formatını tutar:
+
+- 12 grup
+- Grup maçları
+- Son 32 eşleşme slotları
+- Eleme turu yapısı
+
+### Tarihsel Maçlar
+
+```text
+data/final/historical_matches.csv
+```
+
+Geçmiş maçlar ve form hesaplamaları için kullanılır.
+
+---
+
+## Ana Output Dosyaları
+
+### Monte Carlo Takım Olasılıkları
 
 ```text
 outputs/monte_carlo_team_probabilities.csv
+```
+
+Her takım için:
+
+- Şampiyonluk olasılığı
+- Final oynama olasılığı
+- Yarı final olasılığı
+- Çeyrek final olasılığı
+- Eleme turuna kalma olasılığı
+- Takım gücü
+
+### Final Eşleşme Olasılıkları
+
+```text
 outputs/monte_carlo_final_pair_probabilities.csv
+```
+
+10.000 simülasyonda hangi final eşleşmelerinin ne kadar oluştuğunu gösterir.
+
+### En Olası Turnuva Maçları
+
+```text
 outputs/most_likely_tournament_matches.csv
+```
+
+Grup aşamasından finale kadar merkezi en olası bracket yolundaki 104 maçı içerir.
+
+Her maç için:
+
+- Aşama
+- Ev sahibi
+- Deplasman
+- Skor
+- Kazanan
+- xG değerleri
+- Karar biçimi
+
+### En Olası Grup Tabloları
+
+```text
 outputs/most_likely_group_standings.csv
+```
+
+Merkezi senaryodaki 12 grup tablosunu içerir.
+
+### Maç Skor Dağılımları
+
+```text
 outputs/most_likely_match_score_distributions.csv
+```
+
+Her maç için:
+
+- Merkezi skor
+- xG
+- Kazanma / beraberlik / kaybetme olasılıkları
+- En olası 5 skor
+
+### Takım Güç Sıralaması
+
+```text
 outputs/team_power_rankings.csv
 ```
 
-Figures:
+Takımları model gücüne göre sıralar.
+
+---
+
+## Görsel Çıktılar
+
+Grafikler şu klasörde üretilir:
 
 ```text
-outputs/figures/champion_probabilities_top15.png
-outputs/figures/team_power_top15.png
-outputs/figures/stage_reach_probabilities_top10.png
-outputs/figures/final_scoreline_distribution.png
-outputs/figures/most_likely_knockout_path.png
+outputs/figures/
 ```
 
-Reports:
+Üretilen görseller:
+
+```text
+champion_probabilities_top15.png
+team_power_top15.png
+stage_reach_probabilities_top10.png
+final_scoreline_distribution.png
+most_likely_knockout_path.png
+```
+
+Bu görseller GitHub README, LinkedIn postu veya sunumlarda kullanılabilir.
+
+---
+
+## Raporlar
 
 ```text
 reports/data_quality_report.md
 reports/eafc25_feature_report.md
 reports/final_model_report.md
 reports/simulation_report.md
+reports/next_phase_plan.md
+```
+
+Raporların amacı:
+
+- Veri kalitesini özetlemek
+- EA FC feature üretimini açıklamak
+- Model yapısını anlatmak
+- Simülasyon sonuçlarını belgelemek
+- Dashboard / GitHub / LinkedIn sonrası planı tutmak
+
+---
+
+## Kurulum
+
+Python 3.10+ önerilir.
+
+```bash
+git clone https://github.com/cemyildizcy/wc2026-ai-simulator.git
+cd wc2026-ai-simulator
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Windows Git Bash için de aynı komutlar kullanılabilir.
+
+---
+
+## Final Pipeline Nasıl Çalıştırılır?
+
+Tüm final model sürecini çalıştırmak için:
+
+```bash
+python src/run_final_pipeline.py
+```
+
+Bu komut sırasıyla şunları yapar:
+
+1. EA FC 25 oyuncu verilerinden takım feature'larını yeniden üretir.
+2. Final zenginleştirilmiş takım veri setini günceller.
+3. Monte Carlo simülasyonunu çalıştırır.
+4. En olası bracket yolunu üretir.
+5. Maç skor dağılımlarını hesaplar.
+6. Grafik çıktılarını oluşturur.
+
+Başarılı çalıştırma sonrası şu klasörler güncellenir:
+
+```text
+outputs/
+outputs/figures/
+reports/
 ```
 
 ---
 
-## Limitations
+## Önemli Sınırlamalar
 
-Important limitations:
+Bu proje bilinçli olarak bazı basitleştirmeler içerir:
 
-- The full official FIFA 2026 third-place allocation matrix was not publicly accessible during this build. The simulator uses public slot pools plus a documented compatible fallback.
-- Group tie-breakers approximate FIFA logic with points, goal difference, goals for, and model power fallback. Exact head-to-head, fair-play, and drawing-of-lots logic is not fully modeled.
-- EA FC 25 ratings are game-derived proxies and may not reflect real 2025/2026 player form.
-- The Poisson model assumes independent goal scoring and does not model tactical game state, red cards, injuries, weather, travel, fatigue, or lineup changes.
-- StatsBomb open data is limited to recent World Cup editions.
-- Model probabilities are sensitive to feature weighting and data quality.
-- This project is for portfolio/data-science demonstration, not gambling or financial decision-making.
+1. FIFA'nın tam 3. sıra eşleşme kombinasyon tablosu kamuya açık olmadığı için, model belgelenmiş uyumlu bir fallback kullanır.
+2. Grup eşitlik bozma kuralları FIFA'nın tüm detaylarını birebir içermez. Puan, averaj, atılan gol ve takım gücü fallback'i kullanılır.
+3. EA FC 25 reytingleri gerçek futbol gücü için bir proxy olarak kullanılır; birebir gerçek performans anlamına gelmez.
+4. Sakatlıklar, cezalı oyuncular, maç içi taktik değişimler, hava durumu ve yorgunluk modele dahil değildir.
+5. Poisson modeli gol sayılarını bağımsız varsayar. Gerçek futbolda maçın gidişatı bu dağılımı değiştirebilir.
+6. StatsBomb verisi sınırlı sayıda Dünya Kupası edisyonundan gelir.
+7. Sonuçlar feature ağırlıklarına ve veri kalitesine duyarlıdır.
+
+Bu nedenle sonuçlar kesin tahmin olarak değil, **olasılık temelli model çıktısı** olarak okunmalıdır.
 
 ---
 
-## Author
+## Öğrenilenler
 
-Built by [Cem Yıldız](https://github.com/cemyildizcy) — Data Science & AI.
+Bu projede kullanılan ana veri bilimi becerileri:
+
+- Veri temizleme
+- Feature engineering
+- Çok kaynaklı veri birleştirme
+- Olasılıksal modelleme
+- Poisson dağılımı
+- Monte Carlo simülasyonu
+- Turnuva bracket simülasyonu
+- Veri görselleştirme
+- Streamlit dashboard geliştirme
+- GitHub proje paketleme
+
+---
+
+## Teknolojiler
+
+```text
+Python
+Pandas
+NumPy
+Matplotlib
+Plotly
+Streamlit
+StatsBombPy
+Git / GitHub
+```
+
+---
+
+## Geliştiren
+
+**Cem Yıldız**  
+Matematik-Bilgisayar Bilimleri öğrencisi · Veri Bilimi / Yapay Zeka / Full-Stack
+
+GitHub: [cemyildizcy](https://github.com/cemyildizcy)
