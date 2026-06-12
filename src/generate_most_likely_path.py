@@ -30,11 +30,18 @@ def outcome_probabilities(hxg: float, axg: float, max_goals: int = 7) -> dict:
 
 
 def most_likely_scoreline(hxg: float, axg: float, desired_outcome: str | None = None, max_goals: int = 7) -> tuple[int, int, float]:
-    """Most probable scoreline, optionally constrained to home/draw/away result."""
+    """Most probable scoreline, optionally constrained to home/draw/away result.
+
+    For group-stage central forecasts, leave desired_outcome=None so the true
+    modal scoreline can be a draw (often 1-1). For knockouts, pass a desired
+    outcome so the bracket still has a deterministic advancing team.
+    """
     op = outcome_probabilities(hxg, axg, max_goals=max_goals)
     matrix = op['matrix']
     if desired_outcome is None:
-        desired_outcome = max(['home', 'draw', 'away'], key=lambda x: op[x])
+        (hg, ag), prob = max(matrix.items(), key=lambda kv: kv[1])
+        return hg, ag, prob
+
     def ok(score):
         i, j = score
         return (desired_outcome == 'home' and i > j) or (desired_outcome == 'draw' and i == j) or (desired_outcome == 'away' and i < j)
