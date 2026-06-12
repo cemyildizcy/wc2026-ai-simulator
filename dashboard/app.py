@@ -9,6 +9,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 import os
+import hashlib
 
 # ─── Sayfa ayarları ───────────────────────────────────────────────────────────
 st.set_page_config(
@@ -27,7 +28,11 @@ FIG = os.path.join(OUT, "figures")
 
 # ─── Veri yükleme (önbellek) ─────────────────────────────────────────────────
 def data_version():
-    """Create a cache-busting version from output/data file modification times."""
+    """Create cache-busting version from file content, not mtimes.
+
+    Streamlit Cloud can preserve cache across deploys while Git checkout mtimes may
+    not reflect data changes reliably. Content hashes force fresh group/output data.
+    """
     tracked_files = [
         os.path.join(OUT, "monte_carlo_team_probabilities.csv"),
         os.path.join(OUT, "most_likely_tournament_matches.csv"),
@@ -37,7 +42,13 @@ def data_version():
         os.path.join(OUT, "monte_carlo_final_pair_probabilities.csv"),
         os.path.join(DATA, "team_features_2026_enriched.csv"),
     ]
-    return "|".join(str(os.path.getmtime(path)) for path in tracked_files if os.path.exists(path))
+    digest = hashlib.sha256()
+    for path in tracked_files:
+        if os.path.exists(path):
+            digest.update(os.path.basename(path).encode("utf-8"))
+            with open(path, "rb") as f:
+                digest.update(f.read())
+    return digest.hexdigest()
 
 
 @st.cache_data
@@ -549,6 +560,17 @@ elif page == "⚔️ Maç İnceleme":
 elif page == "📊 Grup Aşaması":
     st.markdown("# 📊 Grup Aşaması — 12 Grup × 4 Takım")
     st.markdown("---")
+    st.caption("Güncel veri: grup aşamasında beraberlik serbest; oynanan maçlar sabit sonuç olarak işlenir.")
+
+    played = matches[matches["decided_by"] == "played_result"].copy()
+    if not played.empty:
+        st.markdown('<p class="section-header">Oynanan Maçlar</p>', unsafe_allow_html=True)
+        played_display = played[["match_number", "home", "away", "home_goals", "away_goals", "winner"]].copy()
+        played_display["Skor"] = played_display["home_goals"].astype(str) + "-" + played_display["away_goals"].astype(str)
+        played_display = played_display[["match_number", "home", "away", "Skor", "winner"]]
+        played_display.columns = ["Maç", "Ev", "Deplasman", "Skor", "Kazanan"]
+        st.dataframe(played_display, use_container_width=True, hide_index=True)
+        st.markdown("---")
 
     all_groups = sorted(groups["group"].unique())
 
