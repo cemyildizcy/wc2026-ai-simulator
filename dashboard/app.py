@@ -673,12 +673,35 @@ elif page == "🏆 Eleme Turu":
         "Bu sayfa tek bir kesin tahmin değil, modelin merkezi/en olası bracket yolunu gösterir. "
         "Eleme maçlarında 90 dakika beraberlik ihtimali ayrıca hesaplanır; tur atlayan takım uzatma/penaltı simülasyonu sonrası belirlenir."
     )
-    bracket_img = os.path.join(FIG, "most_likely_knockout_path.png")
-    if os.path.exists(bracket_img):
-        st.image(bracket_img, caption="En olası eleme yolu — merkezi bracket", use_container_width=True)
-    st.markdown("---")
-
     knockout = matches[matches["stage"] != "Group Stage"].copy()
+
+    st.markdown('<p class="section-header">Finale Giden Merkezi Yol</p>', unsafe_allow_html=True)
+    path_matches = knockout[knockout["stage"].isin(["Quarter-final", "Semi-final", "Final"])].copy()
+    path_order = ["Quarter-final", "Semi-final", "Final"]
+    path_matches["stage_order"] = path_matches["stage"].map({s: i for i, s in enumerate(path_order)})
+    path_matches = path_matches.sort_values(["stage_order", "match_number"])
+    path_cols = st.columns(4)
+    for idx, (_, m) in enumerate(path_matches.iterrows()):
+        col = path_cols[idx % 4]
+        with col:
+            st.markdown(f"""
+            <div class="match-card" style="min-height: 145px; border-left: 4px solid #e94560;">
+                <div style="color:#e94560; font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;">
+                    {tr_stage(m['stage'])} · Maç #{int(m['match_number'])}
+                </div>
+                <div style="margin-top:10px; font-size:1.05rem; color:white; line-height:1.55;">
+                    {m['home']} <span style="color:#e94560; font-weight:800;">{int(m['home_goals'])}–{int(m['away_goals'])}</span> {m['away']}
+                </div>
+                <div style="margin-top:10px; color:#FFD700; font-weight:700;">
+                    Kazanan: {m['winner']}
+                </div>
+                <div style="margin-top:6px; color:#a8a8b3; font-size:0.82rem;">
+                    xG: {m['home_xg']:.2f} – {m['away_xg']:.2f}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+    st.caption("Eski siyah bracket görseli yerine burası artık yayıncıya daha okunabilir kart görünümüyle merkezi yolu özetler.")
+    st.markdown("---")
 
     # Aşama tab'ları
     ko_stages = ["Round of 32", "Round of 16", "Quarter-final", "Semi-final", "Third-place Match", "Final"]
