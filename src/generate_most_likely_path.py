@@ -30,17 +30,11 @@ def outcome_probabilities(hxg: float, axg: float, max_goals: int = 7) -> dict:
 
 
 def most_likely_scoreline(hxg: float, axg: float, desired_outcome: str | None = None, max_goals: int = 7) -> tuple[int, int, float]:
-    """Most probable scoreline, optionally constrained to home/draw/away result.
-
-    For group-stage central forecasts, leave desired_outcome=None so the true
-    modal scoreline can be a draw (often 1-1). For knockouts, pass a desired
-    outcome so the bracket still has a deterministic advancing team.
-    """
+    """Most probable scoreline, optionally constrained to home/draw/away result."""
     op = outcome_probabilities(hxg, axg, max_goals=max_goals)
     matrix = op['matrix']
     if desired_outcome is None:
-        (hg, ag), prob = max(matrix.items(), key=lambda kv: kv[1])
-        return hg, ag, prob
+        desired_outcome = max(['home', 'draw', 'away'], key=lambda x: op[x])
 
     def ok(score):
         i, j = score
@@ -50,6 +44,31 @@ def most_likely_scoreline(hxg: float, axg: float, desired_outcome: str | None = 
         candidates = matrix
     (hg, ag), prob = max(candidates.items(), key=lambda kv: kv[1])
     return hg, ag, prob
+
+
+def choose_group_outcome(sim: WorldCupSimulator, home: str, away: str, hxg: float, axg: float) -> tuple[str, dict]:
+    """Calibrated central W/D/L choice for group-stage presentation.
+
+    Pure modal scoreline creates too many 1-1 draws. Pure max W/D/L creates no
+    draws. This middle rule only selects a draw when the teams are close and the
+    draw probability is competitive with the strongest win probability.
+    """
+    op = outcome_probabilities(hxg, axg)
+    best_win = max(op['home'], op['away'])
+    xg_gap = abs(hxg - axg)
+    power_gap = abs(sim.team[home]['team_power'] - sim.team[away]['team_power'])
+    elo_gap = abs(sim.team[home]['elo_rating'] - sim.team[away]['elo_rating'])
+
+    draw_is_competitive = (
+        op['draw'] >= 0.255
+        and (best_win - op['draw']) <= 0.165
+        and xg_gap <= 0.28
+        and power_gap <= 0.13
+        and elo_gap <= 190
+    )
+    if draw_is_competitive:
+        return 'draw', op
+    return ('home' if op['home'] >= op['away'] else 'away'), op
 
 
 def deterministic_winner(sim: WorldCupSimulator, home: str, away: str, hg: int, ag: int) -> str | None:
@@ -82,8 +101,13 @@ def simulate_group_stage_deterministic(sim: WorldCupSimulator):
             score_prob = None
             decided = 'played_result'
         else:
-            hg, ag, score_prob = most_likely_scoreline(hxg, axg)
-            decided = f'most_likely_score_prob={score_prob:.3f}'
+            desired_outcome, op = choose_group_outcome(sim, home, away, hxg, axg)
+            hg, ag, score_prob = most_likely_scoreline(hxg, axg, desired_outcome)
+            decided = (
+                f'calibrated_group_outcome={desired_outcome}; '
+                f'most_likely_score_prob={score_prob:.3f}; '
+                f'W/D/L={op["home"]:.2f}/{op["draw"]:.2f}/{op["away"]:.2f}'
+            )
         winner = None if hg == ag else (home if hg > ag else away)
         match_results.append(MatchResult(home, away, hg, ag, winner, 'Group Stage', match_number, decided, hxg, axg))
         h, a = standings[home], standings[away]
