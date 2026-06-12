@@ -4,36 +4,38 @@ Monte Carlo runs: 10,000
 ## Model Summary
 - Score model: Poisson expected-goals simulation
 - Strength inputs: ELO, FIFA rank, EA FC 25 squad quality, squad market value, recent international form, WC history, StatsBomb WC event features, coach WC experience
+- Group-stage draws: allowed and scored as 1 point per team
+- Fixed played results: Mexico 2-0 South Africa; South Korea 2-1 Czechia
 - Knockout draws: extra-time then penalties
 - 3rd-place R32 allocation: FIFA public candidate slots + greedy compatible fallback; exact FIFA 495-combination table not public in accessible sources
 
 ## Single Seeded Simulation Result
-- Champion: **Argentina**
-- Runner-up: **Brazil**
-- Third place: **Mexico**
+- Champion: **England**
+- Runner-up: **Switzerland**
+- Third place: **Spain**
 
 ## Top Champion Probabilities
-- Argentina: 12.07% (final 19.76%, SF 31.24%)
-- Spain: 11.69% (final 19.00%, SF 29.82%)
-- England: 8.39% (final 14.94%, SF 25.49%)
-- France: 7.46% (final 13.52%, SF 22.74%)
-- Germany: 7.28% (final 13.28%, SF 23.10%)
-- Brazil: 6.87% (final 12.07%, SF 21.43%)
-- Portugal: 6.69% (final 12.12%, SF 21.56%)
-- Belgium: 3.57% (final 7.56%, SF 14.53%)
-- Netherlands: 3.00% (final 6.30%, SF 12.77%)
-- Turkey: 2.66% (final 5.93%, SF 12.33%)
-- Switzerland: 2.28% (final 5.33%, SF 11.75%)
-- Croatia: 2.23% (final 4.68%, SF 10.62%)
+- Argentina: 12.05% (final 19.88%, SF 31.61%)
+- Spain: 11.18% (final 18.43%, SF 29.09%)
+- England: 8.50% (final 14.82%, SF 24.77%)
+- France: 8.13% (final 14.05%, SF 23.90%)
+- Germany: 7.65% (final 13.75%, SF 23.37%)
+- Brazil: 6.80% (final 12.39%, SF 21.68%)
+- Portugal: 6.42% (final 11.75%, SF 21.82%)
+- Belgium: 3.57% (final 7.33%, SF 14.46%)
+- Netherlands: 2.85% (final 5.92%, SF 12.48%)
+- Turkey: 2.51% (final 5.92%, SF 12.15%)
+- Croatia: 2.47% (final 5.48%, SF 10.89%)
+- Switzerland: 2.12% (final 4.71%, SF 10.89%)
 
 ## Most Likely Final Pairings
-- Argentina vs France: 2.59%
-- Germany vs Spain: 2.45%
-- France vs Spain: 2.40%
-- Argentina vs Brazil: 2.33%
-- Argentina vs Germany: 2.25%
-- Brazil vs Spain: 2.08%
-- Argentina vs England: 1.96%
-- England vs Spain: 1.91%
-- Germany vs Portugal: 1.44%
-- Brazil vs Portugal: 1.31%
+- France vs Spain: 2.54%
+- Argentina vs France: 2.54%
+- Argentina vs Brazil: 2.43%
+- Argentina vs Germany: 2.36%
+- Germany vs Spain: 2.28%
+- Argentina vs England: 2.00%
+- Brazil vs Spain: 1.97%
+- England vs Spain: 1.67%
+- Germany vs Portugal: 1.55%
+- France vs Portugal: 1.40%

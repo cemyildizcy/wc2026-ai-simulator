@@ -1,105 +1,105 @@
 match_number,stage,home,away,home_goals,away_goals,winner,decided_by,home_xg,away_xg
 1,Group Stage,Mexico,South Korea,3,0,Mexico,regular,1.569246637690105,1.2838213092493254
-2,Group Stage,Mexico,South Africa,3,1,Mexico,regular,2.1175234286772433,0.9424111917699852
-3,Group Stage,Mexico,Czechia,4,1,Mexico,regular,1.5285651534788653,1.2724134856089808
-4,Group Stage,South Korea,South Africa,3,3,,regular,1.817697441308254,0.9888272669204036
-5,Group Stage,South Korea,Czechia,1,0,South Korea,regular,1.3121313940252946,1.335082987506033
-6,Group Stage,South Africa,Czechia,3,2,South Africa,regular,0.9631926981530116,1.801545682732074
-7,Group Stage,Canada,Switzerland,0,1,Switzerland,regular,1.253782690801379,1.424651401399956
-8,Group Stage,Canada,Qatar,4,2,Canada,regular,1.8945181222424166,0.9205508527610364
-9,Group Stage,Canada,Bosnia-Herzegovina,2,0,Canada,regular,1.6411005849731464,1.1558884628098016
-10,Group Stage,Switzerland,Qatar,0,2,Qatar,regular,1.8979225780001845,0.8115983832452919
-11,Group Stage,Switzerland,Bosnia-Herzegovina,3,0,Switzerland,regular,1.6440496485212823,1.019082438318966
-12,Group Stage,Qatar,Bosnia-Herzegovina,1,3,Bosnia-Herzegovina,regular,1.0623169320161774,1.5398762174809153
+2,Group Stage,Mexico,South Africa,2,0,Mexico,played_result,2.1175234286772433,0.9424111917699852
+3,Group Stage,Mexico,Czechia,3,1,Mexico,regular,1.5285651534788653,1.2724134856089808
+4,Group Stage,South Korea,South Africa,4,1,South Korea,regular,1.817697441308254,0.9888272669204036
+5,Group Stage,South Korea,Czechia,2,1,South Korea,played_result,1.3121313940252946,1.335082987506033
+6,Group Stage,South Africa,Czechia,3,3,,regular,0.9631926981530116,1.801545682732074
+7,Group Stage,Canada,Switzerland,1,0,Canada,regular,1.253782690801379,1.424651401399956
+8,Group Stage,Canada,Qatar,4,1,Canada,regular,1.8945181222424166,0.9205508527610364
+9,Group Stage,Canada,Bosnia-Herzegovina,0,1,Bosnia-Herzegovina,regular,1.6411005849731464,1.1558884628098016
+10,Group Stage,Switzerland,Qatar,4,2,Switzerland,regular,1.8979225780001845,0.8115983832452919
+11,Group Stage,Switzerland,Bosnia-Herzegovina,2,0,Switzerland,regular,1.6440496485212823,1.019082438318966
+12,Group Stage,Qatar,Bosnia-Herzegovina,0,4,Bosnia-Herzegovina,regular,1.0623169320161774,1.5398762174809153
 13,Group Stage,Brazil,Morocco,1,0,Brazil,regular,1.5871140053587665,1.073266529286282
-14,Group Stage,Brazil,Scotland,1,1,,regular,1.6719952725767546,0.995407726918262
-15,Group Stage,Brazil,Haiti,1,0,Brazil,regular,2.260921503234877,0.7327830231947395
-16,Group Stage,Morocco,Scotland,1,2,Scotland,regular,1.3946453122420202,1.2278074725310177
-17,Group Stage,Morocco,Haiti,2,0,Morocco,regular,1.885880676548954,0.9038672769879469
-18,Group Stage,Scotland,Haiti,0,1,Haiti,regular,1.7490717787789511,0.9522074715855406
-19,Group Stage,United States,Paraguay,0,1,Paraguay,regular,1.3829385994582186,1.2791505922686293
-20,Group Stage,United States,Australia,2,0,United States,regular,1.4345972184977016,1.1905762175833803
-21,Group Stage,United States,Turkey,1,0,United States,regular,1.2302023916288622,1.4712421598450487
-22,Group Stage,Paraguay,Australia,0,3,Australia,regular,1.3316631053960821,1.19482089322129
-23,Group Stage,Paraguay,Turkey,3,1,Paraguay,regular,1.141933858492841,1.4764874735520834
-24,Group Stage,Australia,Turkey,2,1,Australia,regular,1.0628610127628242,1.531640539597587
-25,Group Stage,Germany,Curaçao,3,0,Germany,regular,2.44120191508085,0.6738463802991657
-26,Group Stage,Germany,Ivory Coast,3,1,Germany,regular,1.83023208167675,0.9508724640618154
-27,Group Stage,Germany,Ecuador,1,0,Germany,regular,1.5892166501021894,1.0068910067755734
-28,Group Stage,Curaçao,Ivory Coast,0,1,Ivory Coast,regular,0.9301924679757662,1.7507806097068912
-29,Group Stage,Curaçao,Ecuador,2,1,Curaçao,regular,0.80769940200831,1.8539239670698078
-30,Group Stage,Ivory Coast,Ecuador,3,1,Ivory Coast,regular,1.1397540197038991,1.3899346467652665
+14,Group Stage,Brazil,Scotland,2,2,,regular,1.6719952725767546,0.995407726918262
+15,Group Stage,Brazil,Haiti,2,0,Brazil,regular,2.260921503234877,0.7327830231947395
+16,Group Stage,Morocco,Scotland,0,2,Scotland,regular,1.3946453122420202,1.2278074725310177
+17,Group Stage,Morocco,Haiti,0,0,,regular,1.885880676548954,0.9038672769879469
+18,Group Stage,Scotland,Haiti,2,2,,regular,1.7490717787789511,0.9522074715855406
+19,Group Stage,United States,Paraguay,1,0,United States,regular,1.3829385994582186,1.2791505922686293
+20,Group Stage,United States,Australia,0,2,Australia,regular,1.4345972184977016,1.1905762175833803
+21,Group Stage,United States,Turkey,1,2,Turkey,regular,1.2302023916288622,1.4712421598450487
+22,Group Stage,Paraguay,Australia,1,1,,regular,1.3316631053960821,1.19482089322129
+23,Group Stage,Paraguay,Turkey,0,3,Turkey,regular,1.141933858492841,1.4764874735520834
+24,Group Stage,Australia,Turkey,3,1,Australia,regular,1.0628610127628242,1.531640539597587
+25,Group Stage,Germany,Curaçao,2,0,Germany,regular,2.44120191508085,0.6738463802991657
+26,Group Stage,Germany,Ivory Coast,1,3,Ivory Coast,regular,1.83023208167675,0.9508724640618154
+27,Group Stage,Germany,Ecuador,3,1,Germany,regular,1.5892166501021894,1.0068910067755734
+28,Group Stage,Curaçao,Ivory Coast,1,0,Curaçao,regular,0.9301924679757662,1.7507806097068912
+29,Group Stage,Curaçao,Ecuador,0,1,Ecuador,regular,0.80769940200831,1.8539239670698078
+30,Group Stage,Ivory Coast,Ecuador,2,1,Ivory Coast,regular,1.1397540197038991,1.3899346467652665
 31,Group Stage,Netherlands,Japan,3,1,Netherlands,regular,1.403572202822918,1.2280906366800126
-32,Group Stage,Netherlands,Sweden,1,2,Sweden,regular,1.5618615920656642,1.071222645133152
-33,Group Stage,Netherlands,Tunisia,1,1,,regular,1.8415406075347385,0.9141366624401798
-34,Group Stage,Japan,Sweden,3,1,Japan,regular,1.4959487896677166,1.1726226125778945
-35,Group Stage,Japan,Tunisia,0,1,Tunisia,regular,1.763824948996968,1.0006671593752572
-36,Group Stage,Sweden,Tunisia,2,1,Sweden,regular,1.5385258799173531,1.1135184919780354
-37,Group Stage,Belgium,Egypt,1,1,,regular,1.7497119503063905,1.0487103334738448
-38,Group Stage,Belgium,Iran,0,3,Iran,regular,1.6560709709392833,1.0610639994358955
-39,Group Stage,Belgium,New Zealand,3,2,Belgium,regular,2.025504042917313,0.8605619224315174
-40,Group Stage,Egypt,Iran,0,1,Iran,regular,1.2734250263899072,1.3612786292089263
-41,Group Stage,Egypt,New Zealand,2,1,Egypt,regular,1.5574981897315134,1.104047027078265
-42,Group Stage,Iran,New Zealand,0,2,New Zealand,regular,1.5758453078615569,1.044960704403925
-43,Group Stage,Spain,Cape Verde,4,0,Spain,regular,2.3840945914017815,0.7411528118749726
-44,Group Stage,Spain,Saudi Arabia,1,1,,regular,2.2695117430550646,0.7549671476075297
-45,Group Stage,Spain,Uruguay,3,3,,regular,1.6541627419860259,1.005951253182805
-46,Group Stage,Cape Verde,Saudi Arabia,0,2,Saudi Arabia,regular,1.237560056388161,1.324273306199872
-47,Group Stage,Cape Verde,Uruguay,1,3,Uruguay,regular,0.9020115196635721,1.7645196829423089
-48,Group Stage,Saudi Arabia,Uruguay,1,0,Saudi Arabia,regular,0.9188240983485851,1.6797144524935883
-49,Group Stage,France,Senegal,0,2,Senegal,regular,1.6072246072716436,1.0386164407211695
-50,Group Stage,France,Iraq,4,0,France,regular,2.287935893173284,0.7344448287607813
-51,Group Stage,France,Norway,2,1,France,regular,1.5854163835978854,1.0972518161558815
-52,Group Stage,Senegal,Iraq,3,1,Senegal,regular,1.811325421877126,0.8997734793206655
-53,Group Stage,Senegal,Norway,2,0,Senegal,regular,1.2551509893436728,1.3442508486026339
-54,Group Stage,Iraq,Norway,2,0,Iraq,regular,0.887564568877183,1.9135842943367773
-55,Group Stage,Argentina,Algeria,1,1,,regular,1.8781993559995898,0.9619656678671
+32,Group Stage,Netherlands,Sweden,3,0,Netherlands,regular,1.5618615920656642,1.071222645133152
+33,Group Stage,Netherlands,Tunisia,2,2,,regular,1.8415406075347385,0.9141366624401798
+34,Group Stage,Japan,Sweden,1,1,,regular,1.4959487896677166,1.1726226125778945
+35,Group Stage,Japan,Tunisia,3,1,Japan,regular,1.763824948996968,1.0006671593752572
+36,Group Stage,Sweden,Tunisia,0,1,Tunisia,regular,1.5385258799173531,1.1135184919780354
+37,Group Stage,Belgium,Egypt,4,1,Belgium,regular,1.7497119503063905,1.0487103334738448
+38,Group Stage,Belgium,Iran,1,0,Belgium,regular,1.6560709709392833,1.0610639994358955
+39,Group Stage,Belgium,New Zealand,6,0,Belgium,regular,2.025504042917313,0.8605619224315174
+40,Group Stage,Egypt,Iran,2,0,Egypt,regular,1.2734250263899072,1.3612786292089263
+41,Group Stage,Egypt,New Zealand,1,1,,regular,1.5574981897315134,1.104047027078265
+42,Group Stage,Iran,New Zealand,0,1,New Zealand,regular,1.5758453078615569,1.044960704403925
+43,Group Stage,Spain,Cape Verde,3,0,Spain,regular,2.3840945914017815,0.7411528118749726
+44,Group Stage,Spain,Saudi Arabia,3,0,Spain,regular,2.2695117430550646,0.7549671476075297
+45,Group Stage,Spain,Uruguay,1,1,,regular,1.6541627419860259,1.005951253182805
+46,Group Stage,Cape Verde,Saudi Arabia,2,0,Cape Verde,regular,1.237560056388161,1.324273306199872
+47,Group Stage,Cape Verde,Uruguay,3,0,Cape Verde,regular,0.9020115196635721,1.7645196829423089
+48,Group Stage,Saudi Arabia,Uruguay,1,1,,regular,0.9188240983485851,1.6797144524935883
+49,Group Stage,France,Senegal,2,1,France,regular,1.6072246072716436,1.0386164407211695
+50,Group Stage,France,Iraq,2,0,France,regular,2.287935893173284,0.7344448287607813
+51,Group Stage,France,Norway,4,2,France,regular,1.5854163835978854,1.0972518161558815
+52,Group Stage,Senegal,Iraq,0,2,Iraq,regular,1.811325421877126,0.8997734793206655
+53,Group Stage,Senegal,Norway,2,1,Senegal,regular,1.2551509893436728,1.3442508486026339
+54,Group Stage,Iraq,Norway,0,3,Norway,regular,0.887564568877183,1.9135842943367773
+55,Group Stage,Argentina,Algeria,1,2,Algeria,regular,1.8781993559995898,0.9619656678671
 56,Group Stage,Argentina,Austria,0,1,Austria,regular,1.692553572133641,1.026015291963594
-57,Group Stage,Argentina,Jordan,1,0,Argentina,regular,2.3407459562100654,0.7454023723116223
+57,Group Stage,Argentina,Jordan,2,1,Argentina,regular,2.3407459562100654,0.7454023723116223
 58,Group Stage,Algeria,Austria,0,0,,regular,1.2019238548156435,1.4225596284879383
 59,Group Stage,Algeria,Jordan,0,0,,regular,1.6622211841044108,1.0334927073068172
-60,Group Stage,Austria,Jordan,2,0,Austria,regular,1.7728952399084743,0.9313397792085086
-61,Group Stage,Portugal,DR Congo,3,0,Portugal,regular,1.9031047692377032,0.9216918286179053
-62,Group Stage,Portugal,Uzbekistan,1,1,,regular,1.9137543644187227,0.8603553667260451
-63,Group Stage,Portugal,Colombia,0,1,Colombia,regular,1.5487687513106265,1.1559524942966293
+60,Group Stage,Austria,Jordan,0,0,,regular,1.7728952399084743,0.9313397792085086
+61,Group Stage,Portugal,DR Congo,0,2,DR Congo,regular,1.9031047692377032,0.9216918286179053
+62,Group Stage,Portugal,Uzbekistan,2,1,Portugal,regular,1.9137543644187227,0.8603553667260451
+63,Group Stage,Portugal,Colombia,0,0,,regular,1.5487687513106265,1.1559524942966293
 64,Group Stage,DR Congo,Uzbekistan,0,1,Uzbekistan,regular,1.3496547054878902,1.25282759749716
-65,Group Stage,DR Congo,Colombia,1,7,Colombia,regular,1.092252522989748,1.6832686146440177
-66,Group Stage,Uzbekistan,Colombia,1,2,Colombia,regular,1.019565640918645,1.6926880273934561
-67,Group Stage,England,Croatia,1,0,England,regular,1.651929943871038,1.1273329662075986
-68,Group Stage,England,Ghana,2,0,England,regular,2.2368177497740094,0.7733883145253467
-69,Group Stage,England,Panama,2,1,England,regular,2.1865571795215963,0.8057861286704762
-70,Group Stage,Croatia,Ghana,3,2,Croatia,regular,1.8695518791425547,0.9472049196321941
-71,Group Stage,Croatia,Panama,3,1,Croatia,regular,1.8275436540327223,0.9868840411902046
-72,Group Stage,Ghana,Panama,2,1,Ghana,regular,1.2537563866943484,1.3363034845957646
-73,Round of 32,South Africa,Switzerland,2,2,Switzerland,penalties; slots 2A vs 2B,0.8627052043169158,1.942661043040746
-74,Round of 32,Germany,Netherlands,2,0,Germany,regular; slots 1E vs 2F,1.4720831092628197,1.1548302570061062
-75,Round of 32,Sweden,Scotland,1,2,Scotland,regular; slots 1F vs 2C,1.2336754030821253,1.368114163022408
-76,Round of 32,Brazil,Algeria,3,2,Brazil,regular; slots 1C vs 3J,1.716250963808075,0.9999407879027797
-77,Round of 32,Senegal,Belgium,0,0,Belgium,penalties; slots 1I vs 3G,1.2173551417161796,1.4255190344748998
-78,Round of 32,Ivory Coast,France,1,3,France,regular; slots 2E vs 2I,0.9232204226992442,1.8652255200438992
-79,Round of 32,Mexico,Morocco,1,0,Mexico,regular; slots 1A vs 3C,1.4112688497046266,1.4029374319588668
-80,Round of 32,England,Uruguay,2,3,Uruguay,regular; slots 1L vs 3H,1.5758909779404011,1.047853037155716
-81,Round of 32,Australia,Tunisia,1,3,Tunisia,regular; slots 1D vs 3F,1.4614588632126795,1.113472478449544
-82,Round of 32,Iran,Spain,2,3,Spain,extra_time; slots 1G vs 2H,0.8858991857569127,1.9767375940392395
-83,Round of 32,Portugal,Croatia,1,0,Portugal,regular; slots 2K vs 2L,1.5293903103988993,1.1798572625218926
-84,Round of 32,Saudi Arabia,Argentina,2,4,Argentina,regular; slots 1H vs 2J,0.7521915430193069,2.270299595934433
-85,Round of 32,Canada,South Korea,3,1,Canada,regular; slots 1B vs 3A,1.437077816678853,1.333009284536625
-86,Round of 32,Austria,Paraguay,1,1,Austria,penalties; slots 1J vs 3D,1.4130087248553664,1.1646452343662954
-87,Round of 32,Colombia,Uzbekistan,0,1,Uzbekistan,extra_time; slots 1K vs 3K,1.6926880273934561,1.019565640918645
-88,Round of 32,United States,Egypt,1,5,Egypt,regular; slots 2D vs 2G,1.5487246832638146,1.1971375885600322
-89,Round of 16,Switzerland,Germany,0,1,Germany,extra_time,1.0667096847780493,1.5611693094189685
-90,Round of 16,Scotland,Brazil,1,3,Brazil,extra_time,0.995407726918262,1.6719952725767546
-91,Round of 16,Belgium,France,0,1,France,regular,1.1635873997537884,1.537675389431175
-92,Round of 16,Mexico,Uruguay,2,0,Mexico,regular,1.3445275659083022,1.361829560368883
-93,Round of 16,Tunisia,Spain,0,5,Spain,regular,0.782277787370427,2.281125087507889
-94,Round of 16,Portugal,Argentina,1,4,Argentina,regular,1.1943976691482883,1.4822632883457543
-95,Round of 16,Canada,Austria,1,1,Canada,penalties,1.25942479963123,1.4475309436398967
-96,Round of 16,Uzbekistan,Egypt,1,2,Egypt,regular,1.212662345850163,1.3977706262499299
-97,Quarter-final,Germany,Brazil,0,1,Brazil,regular,1.3046598725162428,1.3076026723690173
-98,Quarter-final,France,Mexico,0,1,Mexico,regular,1.7380137469534338,1.1289132310529797
-99,Quarter-final,Spain,Argentina,0,2,Argentina,regular,1.3541734784011636,1.35964224171571
-100,Quarter-final,Canada,Egypt,2,2,Egypt,penalties,1.5545947261567277,1.2307580510675673
-101,Semi-final,Brazil,Mexico,4,1,Brazil,regular,1.6819364273954807,1.1441434827393464
-102,Semi-final,Argentina,Egypt,2,0,Argentina,regular,2.0892353856674384,0.8723658631623532
-103,Third-place Match,Mexico,Egypt,1,0,Mexico,regular,1.6975716406437193,1.185343141131962
-104,Final,Brazil,Argentina,1,3,Argentina,extra_time,1.237838961862028,1.4081202779244064
+65,Group Stage,DR Congo,Colombia,0,2,Colombia,regular,1.092252522989748,1.6832686146440177
+66,Group Stage,Uzbekistan,Colombia,1,1,,regular,1.019565640918645,1.6926880273934561
+67,Group Stage,England,Croatia,7,1,England,regular,1.651929943871038,1.1273329662075986
+68,Group Stage,England,Ghana,3,0,England,regular,2.2368177497740094,0.7733883145253467
+69,Group Stage,England,Panama,1,0,England,regular,2.1865571795215963,0.8057861286704762
+70,Group Stage,Croatia,Ghana,1,0,Croatia,regular,1.8695518791425547,0.9472049196321941
+71,Group Stage,Croatia,Panama,1,1,,regular,1.8275436540327223,0.9868840411902046
+72,Group Stage,Ghana,Panama,3,3,,regular,1.2537563866943484,1.3363034845957646
+73,Round of 32,South Korea,Canada,2,1,South Korea,regular; slots 2A vs 2B,1.333009284536625,1.437077816678853
+74,Round of 32,Germany,Japan,2,1,Germany,regular; slots 1E vs 2F,1.6114277917463113,1.106094761543577
+75,Round of 32,Netherlands,Scotland,3,2,Netherlands,extra_time; slots 1F vs 2C,1.476649421987338,1.1231455281903961
+76,Round of 32,Brazil,Argentina,1,1,Argentina,penalties; slots 1C vs 3J,1.237838961862028,1.4081202779244064
+77,Round of 32,France,United States,2,3,United States,extra_time; slots 1I vs 3D,1.7553073989402583,1.0299275413978237
+78,Round of 32,Ivory Coast,Norway,0,0,Norway,penalties; slots 2E vs 2I,1.115696788054533,1.5600377052530572
+79,Round of 32,Mexico,Senegal,1,2,Senegal,regular; slots 1A vs 3I,1.3830394686957794,1.375960092597857
+80,Round of 32,England,Portugal,1,0,England,regular; slots 1L vs 3K,1.4116354279610268,1.2487399187813506
+81,Round of 32,Australia,Ecuador,0,2,Ecuador,regular; slots 1D vs 3E,1.0985309852430651,1.3617234189531322
+82,Round of 32,Belgium,Cape Verde,5,3,Belgium,regular; slots 1G vs 2H,1.9973464645482268,0.8876975838840045
+83,Round of 32,Uzbekistan,Croatia,2,3,Croatia,extra_time; slots 2K vs 2L,1.0068086734814796,1.7276923335151704
+84,Round of 32,Spain,Austria,4,3,Spain,extra_time; slots 1H vs 2J,1.691966212118391,1.0298013126632284
+85,Round of 32,Switzerland,Tunisia,3,1,Switzerland,regular; slots 1B vs 3F,1.7010198590241574,0.9694575618974133
+86,Round of 32,Algeria,New Zealand,2,1,Algeria,extra_time; slots 1J vs 3G,1.71746723428131,0.9925259879653096
+87,Round of 32,Colombia,Bosnia-Herzegovina,0,1,Bosnia-Herzegovina,extra_time; slots 1K vs 3B,1.7199666146995747,1.0623791447198603
+88,Round of 32,Turkey,Egypt,1,4,Egypt,regular; slots 2D vs 2G,1.6534881561016297,1.0687185339348095
+89,Round of 16,South Korea,Germany,0,1,Germany,regular,0.998092524470892,1.7894024212536024
+90,Round of 16,Netherlands,Argentina,2,1,Netherlands,regular,1.0932173179712508,1.5888202899542911
+91,Round of 16,United States,Norway,2,1,United States,extra_time,1.2446505965572534,1.4681043644481253
+92,Round of 16,Senegal,England,1,2,England,regular,1.0587257054716734,1.6210299261367538
+93,Round of 16,Ecuador,Belgium,1,1,Belgium,penalties,1.145849805442487,1.4364970526418073
+94,Round of 16,Croatia,Spain,0,2,Spain,regular,1.0822529208762492,1.7339784311055824
+95,Round of 16,Switzerland,Algeria,3,1,Switzerland,regular,1.4000747805806586,1.1965393450012825
+96,Round of 16,Bosnia-Herzegovina,Egypt,1,0,Bosnia-Herzegovina,regular,1.2635843481911475,1.4202964593893075
+97,Quarter-final,Germany,Netherlands,1,1,Germany,penalties,1.4720831092628197,1.1548302570061062
+98,Quarter-final,United States,England,0,2,England,regular,1.0498685752499584,1.7703846807582568
+99,Quarter-final,Belgium,Spain,1,2,Spain,extra_time,1.1386856142642563,1.6279129893591722
+100,Quarter-final,Switzerland,Bosnia-Herzegovina,2,1,Switzerland,regular,1.6440496485212823,1.019082438318966
+101,Semi-final,Germany,England,1,4,England,regular,1.312216945256043,1.3628055374770776
+102,Semi-final,Spain,Switzerland,2,3,Switzerland,extra_time,1.6843863570067572,1.0135243669196172
+103,Third-place Match,Germany,Spain,0,1,Spain,regular,1.2597437176028974,1.4304937182983724
+104,Final,England,Switzerland,2,2,England,penalties,1.6046844702752183,1.0557416005475668

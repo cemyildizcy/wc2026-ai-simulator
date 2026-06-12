@@ -2,7 +2,7 @@
 
 Bu proje, **2026 FIFA Dünya Kupası'nı 48 takımlı yeni formatıyla veri bilimi kullanarak simüle eden** uçtan uca bir futbol analitiği projesidir.
 
-Model; takım gücü, FIFA/ELO benzeri reytingler, EA FC 25 oyuncu verileri, Dünya Kupası geçmişi, son form, piyasa değeri ve StatsBomb xG göstergelerini birleştirerek maç skorlarını olasılıksal olarak üretir. Ardından turnuvayı **10.000 kez Monte Carlo simülasyonu** ile çalıştırır ve takımların şampiyonluk / final / yarı final / eleme turu olasılıklarını hesaplar.
+Model; takım gücü, resmi FIFA sıralaması, **World Football Elo Ratings** üzerinden çekilen güncel ELO puanları, EA FC 25 oyuncu verileri, Dünya Kupası geçmişi, son form, piyasa değeri ve StatsBomb xG göstergelerini birleştirerek maç skorlarını olasılıksal olarak üretir. Ardından turnuvayı **10.000 kez Monte Carlo simülasyonu** ile çalıştırır ve takımların şampiyonluk / final / yarı final / eleme turu olasılıklarını hesaplar.
 
 Ayrıca proje içinde sonuçları incelemek için **Türkçe Streamlit dashboard** bulunur.
 
@@ -15,7 +15,7 @@ Ayrıca proje içinde sonuçları incelemek için **Türkçe Streamlit dashboard
 Bu proje aşağıdaki süreci uçtan uca gerçekleştirir:
 
 1. 2026 Dünya Kupası'na uygun **48 takımlı veri seti** hazırlar.
-2. Takımların grup bilgilerini, FIFA sırasını, ELO benzeri gücünü, geçmiş başarılarını ve güncel formunu işler.
+2. Takımların grup bilgilerini, FIFA sırasını, World Football Elo puanını, geçmiş başarılarını ve güncel formunu işler.
 3. EA FC 25 oyuncu verilerinden takımlar için kadro gücü feature'ları üretir.
 4. StatsBomb açık verisinden Dünya Kupası xG / xGA / şut / pas göstergeleri ekler.
 5. Her takım için birleşik bir **team power score** hesaplar.
@@ -36,7 +36,7 @@ Takım gücünü tek bir kaynaktan değil, birden fazla veri ailesinden oluştur
 Kullanılan feature grupları:
 
 - FIFA sıralaması
-- ELO benzeri takım reytingi
+- World Football Elo Ratings üzerinden çekilen güncel ELO puanı
 - Kadro piyasa değeri
 - Dünya Kupası geçmişi
 - Son 10 / son 20 maç formu
@@ -134,40 +134,34 @@ Bu 10.000 çalıştırmadan sonra takımların şampiyonluk olasılıkları hesa
 
 ## Güncel Model Sonuçları
 
+> Bu sonuçlar, World Football Elo Ratings entegrasyonu sonrası güncellenmiştir. ELO verileri `eloratings.net` üzerinden pipeline çalıştırılırken otomatik çekilir.
+
 ### En Yüksek Şampiyonluk Olasılıkları
 
 ```text
-Argentina      10.27%
-Germany         9.70%
-Brazil          9.28%
-Spain           8.76%
-France          8.47%
-England         7.98%
-Portugal        6.82%
-Belgium         4.77%
-Netherlands     3.24%
-Uruguay         2.51%
+Argentina      12.07%
+Spain          11.69%
+England         8.39%
+France          7.46%
+Germany         7.28%
+Brazil          6.87%
+Portugal        6.69%
+Belgium         3.57%
+Netherlands     3.00%
+Turkey          2.66%
 ```
 
 ### Merkezi En Olası Final
 
 ```text
-Brazil 1-0 Argentina
+France 0-1 Argentina
 ```
 
 Final xG:
 
 ```text
-Brazil:    1.36
-Argentina: 1.28
-```
-
-Final sonuç olasılıkları:
-
-```text
-Brazil kazanır:    %38.7
-Beraberlik:        %26.1
-Argentina kazanır: %35.2
+France:    1.28
+Argentina: 1.39
 ```
 
 Bu sonuçlar, finalin çok dengeli olduğunu ve küçük farkların büyük etkiler yaratabileceğini gösteriyor.

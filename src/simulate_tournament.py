@@ -26,6 +26,14 @@ BRACKET_JSON = DATA_FINAL / "wc2026_bracket.json"
 RNG_SEED = 42
 N_MONTE_CARLO = 10_000
 
+# Played group-stage matches are treated as fixed facts in every simulation.
+# Scores are stored from the home/away perspective used in wc2026_bracket.json.
+PLAYED_MATCH_RESULTS = {
+    2: ("Mexico", "South Africa", 2, 0),
+    5: ("South Korea", "Czechia", 2, 1),
+}
+
+
 
 @dataclass
 class MatchResult:
@@ -221,7 +229,22 @@ class WorldCupSimulator:
             home = m["home_team"]
             away = m["away_team"]
             group = m["group"]
-            res = self.simulate_match(home, away, "Group Stage", m["match_number"], knockout=False)
+            match_number = m["match_number"]
+            if match_number in PLAYED_MATCH_RESULTS:
+                expected_home, expected_away, home_goals, away_goals = PLAYED_MATCH_RESULTS[match_number]
+                if (home, away) != (expected_home, expected_away):
+                    raise ValueError(
+                        f"Played result mismatch for match {match_number}: "
+                        f"bracket has {home} vs {away}, fixed result has {expected_home} vs {expected_away}"
+                    )
+                hxg, axg = self.expected_goals(home, away, knockout=False)
+                winner = home if home_goals > away_goals else away if away_goals > home_goals else None
+                res = MatchResult(
+                    home, away, home_goals, away_goals, winner, "Group Stage", match_number,
+                    "played_result", hxg, axg
+                )
+            else:
+                res = self.simulate_match(home, away, "Group Stage", match_number, knockout=False)
             match_results.append(res)
 
             h, a = standings[home], standings[away]
@@ -439,6 +462,8 @@ def main():
     report.append("\n## Model Summary\n")
     report.append("- Score model: Poisson expected-goals simulation\n")
     report.append("- Strength inputs: ELO, FIFA rank, EA FC 25 squad quality, squad market value, recent international form, WC history, StatsBomb WC event features, coach WC experience\n")
+    report.append("- Group-stage draws: allowed and scored as 1 point per team\n")
+    report.append("- Fixed played results: Mexico 2-0 South Africa; South Korea 2-1 Czechia\n")
     report.append("- Knockout draws: extra-time then penalties\n")
     report.append("- 3rd-place R32 allocation: FIFA public candidate slots + greedy compatible fallback; exact FIFA 495-combination table not public in accessible sources\n")
     report.append("\n## Single Seeded Simulation Result\n")

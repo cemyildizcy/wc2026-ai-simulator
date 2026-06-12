@@ -193,7 +193,7 @@ if page == "🏠 Genel Bakış":
         st.markdown(f"""<div class="metric-card">
             <h2>10K</h2>
             <p>Monte Carlo Çalıştırma</p>
-            <h2>6</h2>
+            <h2>7</h2>
             <p>Veri Kaynağı</p>
         </div>""", unsafe_allow_html=True)
 
@@ -662,73 +662,105 @@ elif page == "📖 Metodoloji":
     st.markdown("""
     ## Veri Kaynakları
 
-    | Kaynak | Özellikler |
-    |--------|-----------|
-    | **FIFA/ELO Reytingleri** | FIFA sıralaması, ELO puanı, tarihsel performans |
-    | **EA FC 25** | Kadro OVR, yıldız oyuncular, hücum/orta saha/savunma/kaleci reytingleri, kadro derinliği, hız, şut, pas |
-    | **StatsBomb Açık Veri** | DK 2018/2022 xG, xGA, şut, pas tamamlama yüzdesi |
-    | **Dünya Kupası Tarihçesi** | Şampiyonluklar, katılımlar, en iyi derece, tüm zamanlar kazanma oranı |
-    | **Eleme Verileri** | Atılan/yenen goller, kazanma oranı, zorluk endeksi |
-    | **Son Form** | Son 10/20 maç G/B/M, maç başı gol, nötr/resmi maç kazanma oranları |
+    | Kaynak | Güncellik | Kullanım |
+    |--------|-----------|----------|
+    | **World Football Elo Ratings** | 2026 güncel veri, `eloratings.net/World.tsv` | Takım gücü, ELO sırası, önceki sıra ve sıra değişimi |
+    | **FIFA Ranking** | Nisan 2026 sıralaması | Resmi takım sıralaması ve genel güç göstergesi |
+    | **EA FC 25 oyuncu verisi** | 2024/25 oyun datası | İlk 11 OVR, ilk 23 OVR, hücum/orta saha/savunma/kaleci gücü, yıldız oyuncu, kadro derinliği |
+    | **StatsBomb Open Data** | Dünya Kupası 2018/2022 açık verisi | xG/xGA geçmişi, şut ve maç içi performans göstergeleri |
+    | **Dünya Kupası tarihçesi** | Tarihsel | Şampiyonluklar, katılımlar, en iyi derece, turnuva tecrübesi |
+    | **Eleme / son form verileri** | Mevcut proje datası | Son maç performansı, gol ortalamaları, resmi/nötr maç kazanma oranları |
+    | **Kadro piyasa değeri** | 2025/26 tahmini manuel değerler | Takım kalite ve kadro değeri göstergesi |
+
+    ## Güncel ELO Entegrasyonu
+
+    Bu versiyonda ELO değeri artık manuel tahmin değil. Pipeline başında:
+
+    ```text
+    src/update_elo_ratings.py
+    ```
+
+    çalışır ve `eloratings.net` üzerinden güncel dünya sıralamasını çeker. 48 takımın tamamı eşleşti:
+
+    ```text
+    Matched teams: 48 / 48
+    Unmatched teams: 0
+    ```
+
+    Eski proje ELO tahmini kaybolmasın diye ayrı kolonda saklandı:
+
+    ```text
+    elo_rating_project_estimate
+    ```
+
+    Modelde kullanılan aktif değer:
+
+    ```text
+    elo_rating
+    ```
 
     ## Model Mimarisi
 
     ### Takım Güç Skoru
-    Birleşik skor, şunları birleştiriyor:
-    - FIFA sıralaması & ELO puanı
-    - EA FC 25 kadro gücü
+    Birleşik takım gücü şu bileşenlerden oluşur:
+    - Güncel World Football Elo puanı ve ELO sırası
+    - FIFA sıralaması
+    - EA FC 25 kadro kalitesi: ilk 11, ilk 23, pozisyon grupları, yıldız oyuncu, kadro derinliği
     - Son uluslararası form
-    - Dünya Kupası tarihsel geçmiş
+    - Dünya Kupası tarihsel geçmişi
     - Kadro piyasa değeri
     - StatsBomb xG/xGA göstergeleri
     - Teknik direktör Dünya Kupası deneyimi
 
     ### Maç Simülasyonu
-    - **Poisson beklenen gol modeli** — her takımın xG'si güç skoruna göre rakibe karşı hesaplanır
-    - **Skor olasılıkları** — olası skorlar üzerinde tam Poisson dağılımı
-    - **En olası skor** — dağılımın modu
-    - **Galibiyet/Beraberlik/Mağlubiyet** — skor dağılımından toplanır
+    - **Beklenen gol modeli:** Her maç için iki takımın hücum/savunma gücünden xG üretilir.
+    - **Poisson skor dağılımı:** 0-0, 1-0, 1-1, 2-1 gibi tüm skorların olasılığı hesaplanır.
+    - **Galibiyet/beraberlik/mağlubiyet:** Tek tek skor olasılıkları toplanarak bulunur.
+    - **Skor dağılımı:** Dashboard'da her maç için en olası 5 skor gösterilir.
 
     ### Monte Carlo Simülasyonu
-    - **10.000 tam turnuva simülasyonu**
-    - Her çalıştırma skor dağılımlarından maç sonuçları örnekler
-    - Takip: şampiyon, ikinci, üçüncü, 48 takımın tümü için aşama ulaşımı
-    - Tüm çalıştırmalarda final eşleşme kombinasyonları takip edilir
-    - **Merkezi bracket** — tüm turlardaki en olası yol
+    - **10.000 tam turnuva simülasyonu** çalıştırılır.
+    - Her simülasyonda maç sonuçları Poisson dağılımından örneklenir.
+    - Takımların şampiyonluk, final, yarı final, çeyrek final ve eleme turuna ulaşma olasılıkları hesaplanır.
+    - Final eşleşme kombinasyonları ayrıca takip edilir.
+    - **Merkezi bracket**, en olası yolun okunabilir özetidir; tek kesin tahmin değildir.
 
     ### Önemli Sınırlamalar
-    - FIFA üçüncü sıra dağılım tablosu, belgelenmiş uyumlu bir yedek kullanır (tam 495 kombinasyon tablosu kamuya açık değil)
-    - EA FC 25 reytingleri gerçek 2025/2026 oyuncu formunun gerisinde kalabilir
-    - Model, turnuva sırasındaki sakatlıkları, cezaları veya taktiksel değişiklikleri hesaba katmaz
-    - Ev sahibi ülkeler için mevcut ELO/FIFA artışı dışında ev avantajı ayarlaması yok
-    - StatsBomb verisi DK 2018/2022 ile sınırlı
+    - Merkezi bracket'teki skorlar, dağılımın en olası tekil skorudur. Futbolda bu değer çoğu maçta 1-0 / 0-1 çıkabilir; bu, modelin tüm maçları 1-0 beklediği anlamına gelmez.
+    - FIFA üçüncü sıra dağılım tablosu için belgelenmiş uyumlu bir yedek kullanılır; tam 495 kombinasyon tablosu kamuya açık değildir.
+    - EA FC 25 reytingleri gerçek 2025/26 oyuncu formunun gerisinde kalabilir.
+    - Model, turnuva sırasındaki sakatlıkları, cezaları veya taktiksel değişiklikleri hesaba katmaz.
+    - Ev sahibi ülkeler için mevcut ELO/FIFA artışı dışında ayrı ev sahibi avantajı ayarlaması yoktur.
+    - StatsBomb verisi Dünya Kupası 2018/2022 ile sınırlıdır.
 
     ## Yorumlama Rehberi
 
-    ⚠️ **Bu bir olasılık modeli, tahmin değil.**
+    ⚠️ **Bu bir olasılık modeli, kesin tahmin değil.**
 
-    Simülatör dağılımlar ve olasılıklar üretir — tek cevaplı tahminler değil.
-    Merkezi bracket'te "Brezilya finali 1-0 kazanır" dediğimizde, bunun yüzlerce 
-    olası sonuç arasından en olası tekil skor (~%9,7) olduğunu kastediyoruz. 
-    Tam dağılım finalin pek çok şekilde sonuçlanabileceğini gösteriyor:
+    Simülatör tek cevap üretmez; olasılık dağılımı üretir. Örneğin merkezi final `France - Argentina 0-1` göründüğünde bu şunu ifade eder:
 
-    ```
-    1-1 → %12,4    (en olası bireysel skor)
-    1-0 → %9,7     (merkezi bracket skoru)
-    0-1 → %9,1
-    2-1 → %8,4
-    1-2 → %8,0
+    ```text
+    Argentina final için daha olası taraf.
+    0-1, o eşleşmedeki en olası kazanan skorlarından biri.
+    Ama 1-1, 1-2, 1-0, 2-1 gibi skorlar da yakın olasılıklara sahip.
     ```
 
-    Monte Carlo şampiyonluk olasılığı (Arjantin %10,27) belirsizliği temsil eder — 
-    hiçbir takım baskın değil, bu da gerçek futbol belirsizliğini yansıtır.
+    Güncel ELO entegrasyonu sonrası Monte Carlo favorisi:
+
+    ```text
+    Argentina ≈ %12.1
+    Spain ≈ %11.7
+    England ≈ %8.4
+    ```
+
+    Bu düşük yüzdeler normaldir: 48 takımlı formatta hiçbir takım turnuvayı domine etmiyor, belirsizlik yüksek kalıyor.
     """)
 
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #a8a8b3; padding: 20px;">
         <p>Geliştiren: <b>Cem Yıldız</b> — Veri Bilimi & Yapay Zeka</p>
-        <p>Araçlar: Python · Pandas · Plotly · Streamlit · StatsBomb · EA FC 25</p>
+        <p>Araçlar: Python · Pandas · Plotly · Streamlit · World Football Elo · StatsBomb · EA FC 25</p>
         <p>GitHub: <a href="https://github.com/cemyildizcy" style="color: #e94560;">@cemyildizcy</a></p>
     </div>
     """, unsafe_allow_html=True)
@@ -738,8 +770,8 @@ elif page == "📖 Metodoloji":
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
 <div style="color: #a8a8b3; font-size: 0.8rem;">
-    <p>📊 Veri: FIFA, ELO, EA FC 25, StatsBomb</p>
-    <p>🔬 Model: Poisson xG + Monte Carlo</p>
+    <p>📊 Veri: FIFA, World Football Elo, EA FC 25, StatsBomb</p>
+    <p>🔬 Model: Poisson xG + 10K Monte Carlo</p>
     <p>⚽ 10.000 simülasyon</p>
     <p>Geliştiren: Cem Yıldız</p>
 </div>

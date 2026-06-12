@@ -8,7 +8,7 @@ from pathlib import Path
 import math
 import pandas as pd
 
-from simulate_tournament import WorldCupSimulator, OUTPUTS, match_results_to_df, MatchResult
+from simulate_tournament import WorldCupSimulator, OUTPUTS, match_results_to_df, MatchResult, PLAYED_MATCH_RESULTS
 
 
 def poisson_pmf(k: int, lam: float) -> float:
@@ -63,10 +63,22 @@ def simulate_group_stage_deterministic(sim: WorldCupSimulator):
     }
     for m in sim.bracket['group_stage']['matches']:
         home, away = m['home_team'], m['away_team']
+        match_number = m['match_number']
         hxg, axg = sim.expected_goals(home, away)
-        hg, ag, score_prob = most_likely_scoreline(hxg, axg)
+        if match_number in PLAYED_MATCH_RESULTS:
+            expected_home, expected_away, hg, ag = PLAYED_MATCH_RESULTS[match_number]
+            if (home, away) != (expected_home, expected_away):
+                raise ValueError(
+                    f"Played result mismatch for match {match_number}: "
+                    f"bracket has {home} vs {away}, fixed result has {expected_home} vs {expected_away}"
+                )
+            score_prob = None
+            decided = 'played_result'
+        else:
+            hg, ag, score_prob = most_likely_scoreline(hxg, axg)
+            decided = f'most_likely_score_prob={score_prob:.3f}'
         winner = None if hg == ag else (home if hg > ag else away)
-        match_results.append(MatchResult(home, away, hg, ag, winner, 'Group Stage', m['match_number'], f'most_likely_score_prob={score_prob:.3f}', hxg, axg))
+        match_results.append(MatchResult(home, away, hg, ag, winner, 'Group Stage', match_number, decided, hxg, axg))
         h, a = standings[home], standings[away]
         h['played'] += 1; a['played'] += 1
         h['gf'] += hg; h['ga'] += ag; a['gf'] += ag; a['ga'] += hg
