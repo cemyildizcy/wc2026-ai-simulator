@@ -139,16 +139,16 @@ Bu 10.000 çalıştırmadan sonra takımların şampiyonluk olasılıkları hesa
 ### En Yüksek Şampiyonluk Olasılıkları
 
 ```text
-Argentina      12.07%
-Spain          11.69%
-England         8.39%
-France          7.46%
-Germany         7.28%
-Brazil          6.87%
-Portugal        6.69%
-Belgium         3.57%
-Netherlands     3.00%
-Turkey          2.66%
+Argentina      11.48%
+Spain          11.29%
+France          8.87%
+England         7.78%
+Brazil          7.57%
+Germany         7.51%
+Portugal        5.99%
+Belgium         3.88%
+Netherlands     3.04%
+Turkey          2.74%
 ```
 
 ### Merkezi En Olası Final
@@ -164,7 +164,9 @@ France:    1.28
 Argentina: 1.39
 ```
 
-Bu sonuçlar, finalin çok dengeli olduğunu ve küçük farkların büyük etkiler yaratabileceğini gösteriyor.
+Bu sonuçlar, finalin çok dengeli olduğunu ve küçük farkların büyük etkiler yaratabileceğini gösteriyor. Merkezi bracket'teki 1-0 skorları, modelin bütün maçları 1-0 beklediği anlamına gelmez; Poisson xG dağılımında düşük skorlu tekil skorlar çoğu maçta en yüksek olasılığa sahip olabilir. Bu yüzden dashboard maç sayfalarında ilk 5 skor dağılımı ve G/B/M olasılıkları birlikte gösterilir.
+
+> Bu proje FIFA ile resmi olarak ilişkili değildir. Sonuçlar bağımsız veri bilimi simülasyonudur; bahis tavsiyesi veya kesin tahmin değildir.
 
 ---
 
@@ -190,12 +192,15 @@ Dashboard sayfaları:
 
 ### Genel Bakış
 
-- Monte Carlo favorisi
-- Merkezi final
+- Projenin ne yaptığını açıklayan giriş metni
+- En olası şampiyon ve merkezi final
+- Türkiye model özeti
+- Skorların neden sık 1-0 göründüğünü açıklayan model notu
 - Takım ve maç sayısı
 - İlk 15 şampiyonluk olasılığı
 - En olası final eşleşmeleri
 - Aşama ulaşma olasılıkları
+- Resmi olmayan proje / bahis değildir uyarısı
 
 ### Takım İnceleme
 
@@ -229,6 +234,7 @@ Seçilen maç için:
 - Atılan/yenen gol
 - Averaj
 - Ortalama grup gücü
+- En iyi 8 üçüncü takım ve elenen üçüncüler
 
 ### Eleme Turu
 
@@ -239,6 +245,8 @@ Seçilen maç için:
 - Üçüncülük maçı
 - Final
 - Her maç için skor, xG ve G/B/M dağılımı
+- En olası bracket görseli
+- Eleme maçlarında 90 dakika beraberlik ve uzatma/penaltı açıklaması
 
 ### Metodoloji
 

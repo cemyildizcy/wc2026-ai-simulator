@@ -169,6 +169,15 @@ PLOTLY_TEMPLATE = "plotly_dark"
 if page == "🏠 Genel Bakış":
     st.markdown("# 🏆 2026 FIFA Dünya Kupası AI Simülatörü")
     st.markdown("*48 takım · 104 maç · 10.000 Monte Carlo simülasyonu*")
+    st.info(
+        "Bu dashboard, 2026 Dünya Kupası'nın 48 takımlı yeni formatını olasılıksal olarak simüle eder. "
+        "Takım güçleri FIFA sıralaması, World Football Elo, kadro kalitesi, Dünya Kupası geçmişi ve xG göstergeleriyle modellenir. "
+        "Sonuçlar kesin tahmin değil; 10.000 Monte Carlo senaryosundan çıkan veri bilimi analizidir."
+    )
+    st.caption(
+        "Not: Bu proje FIFA ile resmi olarak ilişkili değildir ve bahis tavsiyesi değildir. "
+        "İlk oynanan maçlar sabit sonuç olarak modele işlendi; grup aşamasında beraberlik serbesttir."
+    )
     st.markdown("---")
 
     # Üst metrikler
@@ -177,12 +186,14 @@ if page == "🏠 Genel Bakış":
         st.stop()
     champion = mc.iloc[0]
     final_match = matches[matches["stage"] == "Final"].iloc[0]
+    turkey_row = mc[mc["team"] == "Turkey"]
+    turkey_row = turkey_row.iloc[0] if not turkey_row.empty else None
 
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         st.markdown(f"""<div class="metric-card">
             <h2>🇦🇷</h2>
-            <p>MC Favorisi</p>
+            <p>En Olası Şampiyon</p>
             <h2>{champion['champion_prob']*100:.1f}%</h2>
             <p>{champion['team']}</p>
         </div>""", unsafe_allow_html=True)
@@ -203,10 +214,32 @@ if page == "🏠 Genel Bakış":
     with c4:
         st.markdown(f"""<div class="metric-card">
             <h2>10K</h2>
-            <p>Monte Carlo Çalıştırma</p>
+            <p>Monte Carlo Simülasyonu</p>
             <h2>7</h2>
             <p>Veri Kaynağı</p>
         </div>""", unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    col_note1, col_note2 = st.columns(2)
+    with col_note1:
+        st.markdown("### 🧠 Skorlar neden sık 1-0 görünüyor?")
+        st.write(
+            "Futbolda tekil skor olasılıkları düşük ve birbirine yakındır. Poisson xG modelinde 1-0, 0-1 veya 1-1 gibi düşük skorlu sonuçlar çoğu dengeli maçta en yüksek tekil skor olabilir. "
+            "Bu, modelin bütün maçlar kesin 1-0 biter dediği anlamına gelmez; skor dağılımında 1-1, 2-1, 0-0 gibi sonuçlar da yakın olasılıklardadır. "
+            "Bu yüzden maç sayfalarında sadece merkezi skor değil, ilk 5 skor dağılımı ve kazanma/beraberlik/kaybetme olasılıkları birlikte verilmiştir."
+        )
+    with col_note2:
+        st.markdown("### 🇹🇷 Türkiye Model Özeti")
+        if turkey_row is not None:
+            st.write(
+                f"Türkiye'nin modelde Son 32'ye kalma olasılığı **%{turkey_row['knockout_prob']*100:.1f}**, "
+                f"çeyrek final olasılığı **%{turkey_row['quarter_final_prob']*100:.1f}**, "
+                f"final olasılığı **%{turkey_row['final_prob']*100:.1f}** ve şampiyonluk olasılığı **%{turkey_row['champion_prob']*100:.1f}**. "
+                "Merkezi bracket'te Türkiye grup lideri çıkıp Son 32'de Ivory Coast ile eşleşiyor."
+            )
+        else:
+            st.write("Türkiye verisi bulunamadı.")
 
     st.markdown("---")
 
@@ -237,6 +270,7 @@ if page == "🏠 Genel Bakış":
             textfont_size=12,
         )
         st.plotly_chart(fig, use_container_width=True)
+        st.caption("Favoriler birbirine yakın dağılıyor. En yüksek olasılığın %12 altında kalması, 48 takımlı formatta belirsizliğin yüksek olduğunu gösterir.")
 
     with col2:
         st.markdown('<p class="section-header">En Olası Final Eşleşmeleri</p>',
@@ -264,6 +298,7 @@ if page == "🏠 Genel Bakış":
             textfont_size=11,
         )
         st.plotly_chart(fig2, use_container_width=True)
+        st.caption("Final kombinasyonları tek bir eşleşmede yoğunlaşmıyor; turnuva yolu ve kura etkisi sonucu ciddi şekilde değiştiriyor.")
 
     # Aşama ulaşma olasılıkları
     st.markdown("---")
@@ -291,6 +326,7 @@ if page == "🏠 Genel Bakış":
         margin=dict(l=10, r=10, t=10, b=10),
     )
     st.plotly_chart(fig3, use_container_width=True)
+    st.caption("Aşama olasılıkları 10.000 tam turnuva simülasyonunda takımların ilgili tura en az bir kez ulaşma oranlarından hesaplanır.")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -566,10 +602,23 @@ elif page == "📊 Grup Aşaması":
     if not played.empty:
         st.markdown('<p class="section-header">Oynanan Maçlar</p>', unsafe_allow_html=True)
         played_display = played[["match_number", "home", "away", "home_goals", "away_goals", "winner"]].copy()
-        played_display["Skor"] = played_display["home_goals"].astype(str) + "-" + played_display["away_goals"].astype(str)
+        played_display["Skor"] = played_display["home_goals"].astype(int).astype(str) + "-" + played_display["away_goals"].astype(int).astype(str)
         played_display = played_display[["match_number", "home", "away", "Skor", "winner"]]
         played_display.columns = ["Maç", "Ev", "Deplasman", "Skor", "Kazanan"]
         st.dataframe(played_display, use_container_width=True, hide_index=True)
+        st.markdown("---")
+
+    st.markdown('<p class="section-header">En İyi Üçüncüler</p>', unsafe_allow_html=True)
+    thirds = groups[groups["rank"] == 3].copy()
+    if not thirds.empty:
+        fifa_lookup = features.set_index("team")["fifa_rank"].to_dict()
+        thirds["fifa_rank"] = thirds["team"].map(fifa_lookup)
+        thirds = thirds.sort_values(["points", "gd", "gf", "fifa_rank"], ascending=[False, False, False, True])
+        thirds["Durum"] = ["Son 32" if i < 8 else "Elendi" for i in range(len(thirds))]
+        thirds_display = thirds[["group", "team", "points", "gd", "gf", "fifa_rank", "Durum"]].copy()
+        thirds_display.columns = ["Grup", "Takım", "Puan", "Averaj", "Atılan Gol", "FIFA Sırası", "Durum"]
+        st.dataframe(thirds_display.reset_index(drop=True), use_container_width=True, hide_index=True)
+        st.caption("2026 formatında 12 grup üçüncüsünden en iyi 8 takım Son 32'ye kalır. Sıralama: puan, averaj, atılan gol; fair-play verisi simüle edilmediği için eşitlikte FIFA sıralaması yedek kriterdir.")
         st.markdown("---")
 
     all_groups = sorted(groups["group"].unique())
@@ -619,6 +668,14 @@ elif page == "📊 Grup Aşaması":
 # ═══════════════════════════════════════════════════════════════════════════════
 elif page == "🏆 Eleme Turu":
     st.markdown("# 🏆 Eleme Turu — En Olası Yol")
+    st.markdown("---")
+    st.write(
+        "Bu sayfa tek bir kesin tahmin değil, modelin merkezi/en olası bracket yolunu gösterir. "
+        "Eleme maçlarında 90 dakika beraberlik ihtimali ayrıca hesaplanır; tur atlayan takım uzatma/penaltı simülasyonu sonrası belirlenir."
+    )
+    bracket_img = os.path.join(FIG, "most_likely_knockout_path.png")
+    if os.path.exists(bracket_img):
+        st.image(bracket_img, caption="En olası eleme yolu — merkezi bracket", use_container_width=True)
     st.markdown("---")
 
     knockout = matches[matches["stage"] != "Group Stage"].copy()
@@ -746,10 +803,18 @@ elif page == "📖 Metodoloji":
     - Takımların şampiyonluk, final, yarı final, çeyrek final ve eleme turuna ulaşma olasılıkları hesaplanır.
     - Final eşleşme kombinasyonları ayrıca takip edilir.
     - **Merkezi bracket**, en olası yolun okunabilir özetidir; tek kesin tahmin değildir.
+    - İlk oynanan maçlar sabit sonuç olarak işlenir; kalan grup maçlarında beraberlik serbesttir.
+
+    ### 2026 Üçüncü Takım Kuralı
+    - 12 grup üçüncüsünden en iyi 8 takım Son 32 turuna kalır.
+    - Sıralama puan, averaj ve atılan gole göre yapılır.
+    - Fair-play kart verisi simüle edilmediği için eşitlikte FIFA sıralaması yedek kriter olarak kullanılır.
+    - Üçüncü takımlar, FIFA/Wikipedia public candidate pool eşleşmelerine göre uygun grup liderleriyle eşleştirilir.
 
     ### Önemli Sınırlamalar
     - Merkezi bracket'teki skorlar, dağılımın en olası tekil skorudur. Futbolda bu değer çoğu maçta 1-0 / 0-1 çıkabilir; bu, modelin tüm maçları 1-0 beklediği anlamına gelmez.
-    - FIFA üçüncü sıra dağılım tablosu için belgelenmiş uyumlu bir yedek kullanılır; tam 495 kombinasyon tablosu kamuya açık değildir.
+    - Maç sayfalarında merkezi skorun yanında ilk 5 skor dağılımı ve kazanma/beraberlik/kaybetme olasılıkları birlikte verilmiştir.
+    - FIFA üçüncü sıra dağılım tablosu için public candidate pool + uyumlu greedy fallback kullanılır; tam 495 kombinasyon tablosu uygulamaya kodlanmamıştır.
     - EA FC 25 reytingleri gerçek 2025/26 oyuncu formunun gerisinde kalabilir.
     - Model, turnuva sırasındaki sakatlıkları, cezaları veya taktiksel değişiklikleri hesaba katmaz.
     - Ev sahibi ülkeler için mevcut ELO/FIFA artışı dışında ayrı ev sahibi avantajı ayarlaması yoktur.
@@ -770,12 +835,14 @@ elif page == "📖 Metodoloji":
     Güncel ELO entegrasyonu sonrası Monte Carlo favorisi:
 
     ```text
-    Argentina ≈ %12.1
-    Spain ≈ %11.7
-    England ≈ %8.4
+    Argentina ≈ %11.5
+    Spain ≈ %11.3
+    France ≈ %8.9
     ```
 
     Bu düşük yüzdeler normaldir: 48 takımlı formatta hiçbir takım turnuvayı domine etmiyor, belirsizlik yüksek kalıyor.
+
+    > Bu proje FIFA ile resmi olarak ilişkili değildir. Sonuçlar bağımsız veri bilimi simülasyonudur; bahis tavsiyesi veya kesin tahmin değildir.
     """)
 
     st.markdown("---")
