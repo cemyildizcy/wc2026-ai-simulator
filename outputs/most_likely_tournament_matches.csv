@@ -72,19 +72,19 @@ match_number,stage,home,away,home_goals,away_goals,winner,decided_by,home_xg,awa
 71,Group Stage,Croatia,Panama,1,0,Croatia,calibrated_group_outcome=home; most_likely_score_prob=0.110; W/D/L=0.57/0.23/0.20,1.8275436540327223,0.9868840411902046
 72,Group Stage,Ghana,Panama,0,1,Panama,calibrated_group_outcome=away; most_likely_score_prob=0.100; W/D/L=0.35/0.26/0.39,1.2537563866943484,1.3363034845957646
 73,Round of 32,South Korea,Canada,0,1,Canada,most_likely_score_prob=0.090; W/D/L=0.35/0.25/0.40; slots 2A vs 2B,1.333009284536625,1.437077816678853
-74,Round of 32,Germany,Japan,1,0,Germany,most_likely_score_prob=0.106; W/D/L=0.49/0.25/0.26; slots 1E vs 2F,1.6114277917463113,1.106094761543577
+74,Round of 32,Germany,Scotland,1,0,Germany,most_likely_score_prob=0.113; W/D/L=0.53/0.24/0.23; slots 1E vs 3C,1.6953270465678598,1.0115746737886597
 75,Round of 32,Netherlands,Morocco,1,0,Netherlands,most_likely_score_prob=0.103; W/D/L=0.41/0.26/0.32; slots 1F vs 2C,1.4016851704545985,1.210995725998919
-76,Round of 32,Brazil,Senegal,1,0,Brazil,most_likely_score_prob=0.115; W/D/L=0.49/0.25/0.26; slots 1C vs 3I,1.555367222333599,1.0526284917474715
-77,Round of 32,France,Scotland,1,0,France,most_likely_score_prob=0.115; W/D/L=0.55/0.24/0.21; slots 1I vs 3C,1.727741144818112,0.9821573693886083
+76,Round of 32,Brazil,Japan,1,0,Brazil,most_likely_score_prob=0.109; W/D/L=0.49/0.25/0.26; slots 1C vs 2F,1.5892506731094522,1.0884171983276791
+77,Round of 32,France,Sweden,1,0,France,most_likely_score_prob=0.115; W/D/L=0.58/0.23/0.19; slots 1I vs 3F,1.8274429224312585,0.936752352002535
 78,Round of 32,Ecuador,Norway,0,1,Norway,most_likely_score_prob=0.107; W/D/L=0.33/0.27/0.41; slots 2E vs 2I,1.1814255903276132,1.3546030149925248
-79,Round of 32,Mexico,Sweden,1,0,Mexico,most_likely_score_prob=0.094; W/D/L=0.45/0.25/0.30; slots 1A vs 3F,1.5725404383906498,1.2410104466550613
+79,Round of 32,Mexico,Senegal,1,0,Mexico,most_likely_score_prob=0.088; W/D/L=0.37/0.26/0.37; slots 1A vs 3I,1.3830394686957794,1.375960092597857
 80,Round of 32,England,Algeria,1,0,England,most_likely_score_prob=0.109; W/D/L=0.56/0.23/0.21; slots 1L vs 3J,1.7887056722976418,1.0057328149504885
 81,Round of 32,Turkey,Ivory Coast,1,0,Turkey,most_likely_score_prob=0.109; W/D/L=0.48/0.25/0.27; slots 1D vs 3E,1.5633719907773767,1.1027455101004249
-82,Round of 32,Belgium,Uruguay,1,0,Belgium,most_likely_score_prob=0.104; W/D/L=0.41/0.26/0.33; slots 1G vs 2H,1.3858242522795903,1.2048534157165178
+82,Round of 32,Belgium,Czechia,1,0,Belgium,most_likely_score_prob=0.106; W/D/L=0.48/0.25/0.27; slots 1G vs 3A,1.5755144889494639,1.1257442039402292
 83,Round of 32,Colombia,Croatia,0,1,Croatia,most_likely_score_prob=0.089; W/D/L=0.36/0.26/0.38; slots 2K vs 2L,1.3527235865560447,1.3981919246151377
 84,Round of 32,Spain,Austria,1,0,Spain,most_likely_score_prob=0.111; W/D/L=0.53/0.24/0.23; slots 1H vs 2J,1.691966212118391,1.0298013126632284
 85,Round of 32,Switzerland,Egypt,1,0,Switzerland,most_likely_score_prob=0.111; W/D/L=0.48/0.25/0.26; slots 1B vs 3G,1.5573883383710017,1.0850907816951
-86,Round of 32,Argentina,Czechia,1,0,Argentina,most_likely_score_prob=0.112; W/D/L=0.60/0.22/0.18; slots 1J vs 3A,1.8812357201815864,0.9364462071402171
+86,Round of 32,Argentina,Uruguay,1,0,Argentina,most_likely_score_prob=0.116; W/D/L=0.53/0.24/0.23; slots 1J vs 2H,1.6547369786619126,1.0022529162118377
 87,Round of 32,Portugal,Bosnia-Herzegovina,1,0,Portugal,most_likely_score_prob=0.114; W/D/L=0.62/0.21/0.17; slots 1K vs 3B,1.9445955558653536,0.8964833277767262
 88,Round of 32,United States,Iran,1,0,United States,most_likely_score_prob=0.101; W/D/L=0.43/0.26/0.31; slots 2D vs 2G,1.4658401284172633,1.2112397075223742
 89,Round of 16,Canada,Germany,0,1,Germany,most_likely_score_prob=0.104; W/D/L=0.23/0.23/0.54,1.0647962421696389,1.7707474149263307

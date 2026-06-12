@@ -525,7 +525,7 @@
       "2. Goal difference",
       "3. Goals scored",
       "4. Fair play points",
-      "5. Drawing of lots"
+      "5. FIFA ranking fallback when fair play is unavailable in simulation"
     ]
   },
   "knockout_stage": {
@@ -539,8 +539,8 @@
       {
         "match": 74,
         "home": "1E",
-        "away": "2F",
-        "description": "Winner E vs Runner-up F"
+        "away": "3A/B/C/D/F",
+        "description": "Winner E vs Best 3rd"
       },
       {
         "match": 75,
@@ -551,8 +551,8 @@
       {
         "match": 76,
         "home": "1C",
-        "away": "3D/E/F/I/J",
-        "description": "Winner C vs Best 3rd"
+        "away": "2F",
+        "description": "Winner C vs Runner-up F"
       },
       {
         "match": 77,
@@ -587,8 +587,8 @@
       {
         "match": 82,
         "home": "1G",
-        "away": "2H",
-        "description": "Winner G vs Runner-up H"
+        "away": "3A/E/H/I/J",
+        "description": "Winner G vs Best 3rd"
       },
       {
         "match": 83,
@@ -611,8 +611,8 @@
       {
         "match": 86,
         "home": "1J",
-        "away": "3C/D/F/G/H",
-        "description": "Winner J vs Best 3rd"
+        "away": "2H",
+        "description": "Winner J vs Runner-up H"
       },
       {
         "match": 87,

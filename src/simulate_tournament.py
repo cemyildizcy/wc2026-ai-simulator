@@ -279,8 +279,12 @@ class WorldCupSimulator:
             if rank in (1, 2):
                 slots[f"{rank}{group}"] = row["team"]
 
-        thirds = standings[standings["rank"] == 3].sort_values(
-            ["points", "gd", "gf", "team_power"], ascending=[False, False, False, False]
+        # Fair-play points are not simulated. Use FIFA rank as the documented
+        # fallback after points, goal difference, and goals scored.
+        thirds = standings[standings["rank"] == 3].copy()
+        thirds["fifa_rank"] = thirds["team"].map(lambda t: self.team[t]["fifa_rank"])
+        thirds = thirds.sort_values(
+            ["points", "gd", "gf", "fifa_rank"], ascending=[False, False, False, True]
         ).head(8)
         for _, row in thirds.iterrows():
             slots[f"3{row['group']}"] = row["team"]
@@ -292,9 +296,10 @@ class WorldCupSimulator:
         return ["3" + x for x in slot[1:].split("/")]
 
     def resolve_round_of_32_slots(self, qualifier_slots: Dict[str, str]) -> List[Tuple[int, str, str, str, str]]:
-        # FIFA public schedule gives candidate pools for third-place opponents, not full allocation table.
-        # Greedy authentic fallback: assign strongest available third-place team to first compatible slot,
-        # while avoiding reuse. This is marked in output as fifa_public_slots_greedy_third_place.
+        # FIFA/Wikipedia public schedule gives candidate pools for third-place opponents,
+        # not the full allocation table. Greedy fallback: assign the best-ranked
+        # available third-place team to the first compatible slot while avoiding reuse.
+        # This is marked in output as fifa_public_slots_greedy_third_place.
         used_thirds = set()
         matches = []
         available_thirds = {k: v for k, v in qualifier_slots.items() if k.startswith("3")}
@@ -312,8 +317,14 @@ class WorldCupSimulator:
                     if not remaining:
                         raise RuntimeError("No third-place teams left to assign")
                     valid = remaining
-                # Prefer stronger team for deterministic-ish bracket realism.
-                chosen_slot = max(valid, key=lambda s: self.team[available_thirds[s]]["team_power"])
+                # Prefer the best third-place table rank among compatible teams.
+                chosen_slot = max(
+                    valid,
+                    key=lambda s: (
+                        self.team[available_thirds[s]]["team_power"],
+                        -self.team[available_thirds[s]]["fifa_rank"],
+                    ),
+                )
                 used_thirds.add(chosen_slot)
                 away = available_thirds[chosen_slot]
                 away_resolved_slot = chosen_slot
@@ -465,7 +476,8 @@ def main():
     report.append("- Group-stage draws: allowed and scored as 1 point per team\n")
     report.append("- Fixed played results: Mexico 2-0 South Africa; South Korea 2-1 Czechia\n")
     report.append("- Knockout draws: extra-time then penalties\n")
-    report.append("- 3rd-place R32 allocation: FIFA public candidate slots + greedy compatible fallback; exact FIFA 495-combination table not public in accessible sources\n")
+    report.append("- Third-place ranking: points, goal difference, goals scored, FIFA ranking fallback because fair-play cards are not simulated\n")
+    report.append("- R32 third-place slots: Wikipedia/FIFA public candidate pools + greedy compatible fallback; exact full allocation table not encoded\n")
     report.append("\n## Single Seeded Simulation Result\n")
     report.append(f"- Champion: **{one['champion']}**\n")
     report.append(f"- Runner-up: **{one['runner_up']}**\n")

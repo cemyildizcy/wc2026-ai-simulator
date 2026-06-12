@@ -72,34 +72,34 @@ match_number,stage,home,away,home_goals,away_goals,winner,decided_by,home_xg,awa
 71,Group Stage,Croatia,Panama,1,1,,regular,1.8275436540327223,0.9868840411902046
 72,Group Stage,Ghana,Panama,3,3,,regular,1.2537563866943484,1.3363034845957646
 73,Round of 32,South Korea,Canada,2,1,South Korea,regular; slots 2A vs 2B,1.333009284536625,1.437077816678853
-74,Round of 32,Germany,Japan,2,1,Germany,regular; slots 1E vs 2F,1.6114277917463113,1.106094761543577
+74,Round of 32,Germany,United States,2,1,Germany,regular; slots 1E vs 3D,1.7223761310479062,1.0607756447055008
 75,Round of 32,Netherlands,Scotland,3,2,Netherlands,extra_time; slots 1F vs 2C,1.476649421987338,1.1231455281903961
-76,Round of 32,Brazil,Argentina,1,1,Argentina,penalties; slots 1C vs 3J,1.237838961862028,1.4081202779244064
-77,Round of 32,France,United States,2,3,United States,extra_time; slots 1I vs 3D,1.7553073989402583,1.0299275413978237
-78,Round of 32,Ivory Coast,Norway,0,0,Norway,penalties; slots 2E vs 2I,1.115696788054533,1.5600377052530572
-79,Round of 32,Mexico,Senegal,1,2,Senegal,regular; slots 1A vs 3I,1.3830394686957794,1.375960092597857
-80,Round of 32,England,Portugal,1,0,England,regular; slots 1L vs 3K,1.4116354279610268,1.2487399187813506
-81,Round of 32,Australia,Ecuador,0,2,Ecuador,regular; slots 1D vs 3E,1.0985309852430651,1.3617234189531322
-82,Round of 32,Belgium,Cape Verde,5,3,Belgium,regular; slots 1G vs 2H,1.9973464645482268,0.8876975838840045
-83,Round of 32,Uzbekistan,Croatia,2,3,Croatia,extra_time; slots 2K vs 2L,1.0068086734814796,1.7276923335151704
-84,Round of 32,Spain,Austria,4,3,Spain,extra_time; slots 1H vs 2J,1.691966212118391,1.0298013126632284
-85,Round of 32,Switzerland,Tunisia,3,1,Switzerland,regular; slots 1B vs 3F,1.7010198590241574,0.9694575618974133
-86,Round of 32,Algeria,New Zealand,2,1,Algeria,extra_time; slots 1J vs 3G,1.71746723428131,0.9925259879653096
-87,Round of 32,Colombia,Bosnia-Herzegovina,0,1,Bosnia-Herzegovina,extra_time; slots 1K vs 3B,1.7199666146995747,1.0623791447198603
-88,Round of 32,Turkey,Egypt,1,4,Egypt,regular; slots 2D vs 2G,1.6534881561016297,1.0687185339348095
-89,Round of 16,South Korea,Germany,0,1,Germany,regular,0.998092524470892,1.7894024212536024
-90,Round of 16,Netherlands,Argentina,2,1,Netherlands,regular,1.0932173179712508,1.5888202899542911
-91,Round of 16,United States,Norway,2,1,United States,extra_time,1.2446505965572534,1.4681043644481253
-92,Round of 16,Senegal,England,1,2,England,regular,1.0587257054716734,1.6210299261367538
-93,Round of 16,Ecuador,Belgium,1,1,Belgium,penalties,1.145849805442487,1.4364970526418073
-94,Round of 16,Croatia,Spain,0,2,Spain,regular,1.0822529208762492,1.7339784311055824
-95,Round of 16,Switzerland,Algeria,3,1,Switzerland,regular,1.4000747805806586,1.1965393450012825
-96,Round of 16,Bosnia-Herzegovina,Egypt,1,0,Bosnia-Herzegovina,regular,1.2635843481911475,1.4202964593893075
-97,Quarter-final,Germany,Netherlands,1,1,Germany,penalties,1.4720831092628197,1.1548302570061062
-98,Quarter-final,United States,England,0,2,England,regular,1.0498685752499584,1.7703846807582568
-99,Quarter-final,Belgium,Spain,1,2,Spain,extra_time,1.1386856142642563,1.6279129893591722
-100,Quarter-final,Switzerland,Bosnia-Herzegovina,2,1,Switzerland,regular,1.6440496485212823,1.019082438318966
-101,Semi-final,Germany,England,1,4,England,regular,1.312216945256043,1.3628055374770776
-102,Semi-final,Spain,Switzerland,2,3,Switzerland,extra_time,1.6843863570067572,1.0135243669196172
-103,Third-place Match,Germany,Spain,0,1,Spain,regular,1.2597437176028974,1.4304937182983724
-104,Final,England,Switzerland,2,2,England,penalties,1.6046844702752183,1.0557416005475668
+76,Round of 32,Brazil,Japan,2,0,Brazil,regular; slots 1C vs 2F,1.5892506731094522,1.0884171983276791
+77,Round of 32,France,Tunisia,1,1,Tunisia,penalties; slots 1I vs 3F,2.1546789848121395,0.7993853308488884
+78,Round of 32,Ivory Coast,Norway,2,1,Ivory Coast,regular; slots 2E vs 2I,1.115696788054533,1.5600377052530572
+79,Round of 32,Mexico,Senegal,0,0,Senegal,penalties; slots 1A vs 3I,1.3830394686957794,1.375960092597857
+80,Round of 32,England,Argentina,1,2,Argentina,regular; slots 1L vs 3J,1.290096622909303,1.4162766316153794
+81,Round of 32,Australia,Ecuador,1,0,Australia,regular; slots 1D vs 3E,1.0985309852430651,1.3617234189531322
+82,Round of 32,Belgium,Portugal,0,2,Portugal,regular; slots 1G vs 3K,1.2413794093816142,1.4358392857926068
+83,Round of 32,Uzbekistan,Croatia,4,4,Uzbekistan,penalties; slots 2K vs 2L,1.0068086734814796,1.7276923335151704
+84,Round of 32,Spain,Austria,2,2,Spain,penalties; slots 1H vs 2J,1.691966212118391,1.0298013126632284
+85,Round of 32,Switzerland,New Zealand,3,3,New Zealand,penalties; slots 1B vs 3G,1.8028661090246079,0.8904153790638147
+86,Round of 32,Algeria,Cape Verde,0,1,Cape Verde,regular; slots 1J vs 2H,1.6935918347654628,1.0238228051846021
+87,Round of 32,Colombia,Bosnia-Herzegovina,2,1,Colombia,extra_time; slots 1K vs 3B,1.7199666146995747,1.0623791447198603
+88,Round of 32,Turkey,Egypt,0,1,Egypt,extra_time; slots 2D vs 2G,1.6534881561016297,1.0687185339348095
+89,Round of 16,South Korea,Germany,1,5,Germany,regular,0.998092524470892,1.7894024212536024
+90,Round of 16,Netherlands,Brazil,0,1,Brazil,extra_time,1.1363738050079355,1.4518237082988719
+91,Round of 16,Tunisia,Ivory Coast,1,3,Ivory Coast,extra_time,1.136540617922559,1.5163009840910242
+92,Round of 16,Senegal,Argentina,0,1,Argentina,regular,1.0126524313540104,1.7021343480256415
+93,Round of 16,Australia,Portugal,2,0,Australia,regular,0.9493188608640174,1.706345781122419
+94,Round of 16,Uzbekistan,Spain,0,5,Spain,regular,0.7891819953208463,2.169759261434527
+95,Round of 16,New Zealand,Cape Verde,2,3,Cape Verde,regular,1.260301403235892,1.3183691776437116
+96,Round of 16,Colombia,Egypt,2,0,Colombia,regular,1.6293035618053553,1.1311919166247404
+97,Quarter-final,Germany,Brazil,0,1,Brazil,regular,1.3046598725162428,1.3076026723690173
+98,Quarter-final,Ivory Coast,Argentina,1,2,Argentina,regular,0.9001411580514866,1.9753707167725771
+99,Quarter-final,Australia,Spain,0,2,Spain,regular,0.8707859354249071,1.9346054178299117
+100,Quarter-final,Cape Verde,Colombia,1,2,Colombia,extra_time,0.957515435144649,1.8598968294626463
+101,Semi-final,Brazil,Argentina,1,2,Argentina,regular,1.237838961862028,1.4081202779244064
+102,Semi-final,Spain,Colombia,2,3,Colombia,regular,1.7559491460636396,1.0603256877638616
+103,Third-place Match,Brazil,Spain,2,3,Spain,extra_time,1.2424066169146681,1.4076316236439552
+104,Final,Argentina,Colombia,1,0,Argentina,regular,1.7565587175254238,1.056427445498229
